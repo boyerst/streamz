@@ -17,7 +17,10 @@ contract('Streamz', ([deployer, author]) => {
       assert.notEqual(address, null)
       assert.notEqual(address, undefined)
     })
-
+    it('has a name', async () => {
+      const name = await streamz.name()
+      assert.equal(name, 'Streamz')
+    })
   })
 
 
