@@ -8,9 +8,12 @@ require('chai')
 contract('Streamz', ([deployer, author]) => {
   let streamz
 
+  before(async () => {
+    streamz = await Streamz.deployed()    
+  })
+
   describe('deployment', async () => {
     it('deploys successfully', async () => {
-      streamz = await Streamz.deployed()
       const address = await streamz.address
       assert.notEqual(address, 0x0)
       assert.notEqual(address, '')
