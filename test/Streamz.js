@@ -27,7 +27,20 @@ contract('Streamz', ([deployer, author]) => {
   })
 
 
+  // Tests
+    // It uploads videos
+    // It lists videos
+  describe('videos', async () => {
 
+    it('uploads videos', async () => {
+        
+    })    
+
+    it('lists videos', async () => {
+        
+    })
+
+  })
 
 
 })
