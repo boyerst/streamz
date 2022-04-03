@@ -39,9 +39,11 @@ contract Streamz {
 
 
   // Function (upload video)
-  function uploadVideo(string _videoHash, string _title) public {
-
-    videoCount++
+  function uploadVideo(string memory _videoHash, string memory _title) public {
+    require(bytes(_videoHash).length > 0);
+    require(bytes(_title).length > 0);
+    require(msg.sender!=address(0));
+    videoCount++;
     videos[videoCount] = Video(videoCount, _videoHash, _title, msg.sender);
     emit VideoUploaded(videoCount, _videoHash, _title, msg.sender);
   }

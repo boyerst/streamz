@@ -5,7 +5,7 @@ require('chai')
   .should()
 
 
-contract('Streamz', ([deployer, author]) => {
+contract('Streamz', ([deployer, uploader]) => {
   let streamz
 
   before(async () => {
@@ -31,12 +31,19 @@ contract('Streamz', ([deployer, author]) => {
     // It uploads videos
     // It lists videos
   describe('videos', async () => {
+    let result, videoCount
+    const hash = "Qmc5gCcjYypU7y28oCALwfSvxCBskLuPKWpK4qpterKC7z"
+
+    before(async () => {
+      result = await streamz.uploadVideo(hash, 'Here is a title', { from: uploader })
+      videoCount = await streamz.videoCount()
+    })
 
     it('uploads videos', async () => {
-        
+      assert.equal(videoCount, 1)
     })    
 
-    it('lists videos', async () => {
+    xit('lists videos', async () => {
         
     })
 
