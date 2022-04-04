@@ -51,9 +51,9 @@ contract('Streamz', ([deployer, uploader]) => {
 
       // FAILURE
       // Video must have hash
-      await streamz.uploadVideo('', 'Video title', { from: uploader }).should.be.rejected
+      await streamz.uploadVideo('', 'Video title', { from: uploader }).should.be.rejected;
       // Video must have title
-      await streamz.uploadVideo('Video hash', '', { from: uploader }).should.be.rejected
+      await streamz.uploadVideo('Video hash', '', { from: uploader }).should.be.rejected;
     })    
 
     xit('lists videos', async () => {
