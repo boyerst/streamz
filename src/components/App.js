@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import Web3 from 'web3';
 import './App.css';
-import Menubar from './Menubar';
+import Navbar from './Navbar';
 
 
 class App extends Component {
-  
+
 
 
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-           <code>Streamzzzzz</code> 
-          </p>
+      <div>
+        <Navbar/>
+   
+        <p>
+         <code>Streamzzzzz</code> 
+        </p>
 
-        </header>
+
       </div>
     );
   }
