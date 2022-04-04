@@ -40,6 +40,7 @@ contract('Streamz', ([deployer, uploader]) => {
     })
 
     it('uploads videos', async () => {
+      // SUCCESS
       assert.equal(videoCount, 1)
       const event = result.logs[0].args
       // console.log(event)
@@ -47,6 +48,12 @@ contract('Streamz', ([deployer, uploader]) => {
       assert.equal(event.hash, hash, 'Video hash is correct')
       assert.equal(event.title, 'Video title', 'Video title is correct')
       assert.equal(event.uploader, uploader, 'Uploader is correct')
+
+      // FAILURE
+      // Video must have hash
+      await streamz.uploadVideo('', 'Video title', { from: uploader }).should.be.rejected
+      // Video must have title
+      await streamz.uploadVideo('Video hash', '', { from: uploader }).should.be.rejected
     })    
 
     xit('lists videos', async () => {
