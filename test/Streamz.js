@@ -42,7 +42,9 @@ contract('Streamz', ([deployer, uploader]) => {
     it('uploads videos', async () => {
       assert.equal(videoCount, 1)
       const event = result.logs[0].args
+      // console.log(event)
       assert.equal(event.id.toNumber(), videoCount.toNumber(), 'Video Id is correct')
+      assert.equal(event.hash, hash, 'Video hash is correct')
     })    
 
     xit('lists videos', async () => {
