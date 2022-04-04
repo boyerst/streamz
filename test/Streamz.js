@@ -35,7 +35,7 @@ contract('Streamz', ([deployer, uploader]) => {
     const hash = "Qmc5gCcjYypU7y28oCALwfSvxCBskLuPKWpK4qpterKC7z"
 
     before(async () => {
-      result = await streamz.uploadVideo(hash, 'Here is a title', { from: uploader })
+      result = await streamz.uploadVideo(hash, 'Video title', { from: uploader })
       videoCount = await streamz.videoCount()
     })
 
@@ -45,6 +45,7 @@ contract('Streamz', ([deployer, uploader]) => {
       // console.log(event)
       assert.equal(event.id.toNumber(), videoCount.toNumber(), 'Video Id is correct')
       assert.equal(event.hash, hash, 'Video hash is correct')
+      assert.equal(event.title, 'Video title', 'Video title is correct')
     })    
 
     xit('lists videos', async () => {
