@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Identicon from 'identicon.js';
+
 
 class Navbar extends Component {
   render() {
@@ -7,13 +9,26 @@ class Navbar extends Component {
   
       <nav className="navbar navbar-expand-lg navbar-dark p-0 shadow text-monospace"> 
         <a className="navbar-brand" href="#!">Streamz</a>
-        <div className="navbar-nav ms-auto">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#!">{this.props.account.substring(0,6)}...{this.props.account.substring(38,42)}</a>
+  
+          <ul className="navbar-nav px-3 ms-auto">
+            <li>
+            <small>
+              <a target="blank" alt="" className="text-white" rel="noopener noreferrer">{this.props.account.substring(0,6)}...{this.props.account.substring(38,42)}</a>
+            </small>
+              { this.props.account
+                ?
+                <img
+                  alt=""
+                  className='navbar-brand'
+                  width='26'
+                  height='33'
+                  src={`data:image/png;base64,${new Identicon(this.props.account, 30).toString()}`}
+                />
+                :
+                <span></span>
+              }
             </li>
           </ul>
-        </div>
       </nav>
 
     )
@@ -21,3 +36,4 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+
