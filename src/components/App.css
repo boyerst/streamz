@@ -1,6 +1,12 @@
 .navbar {
   background-color: #6E31E0;
   font-family: "Monaco";
+}
 
+.navbar-brand {
+  margin-left: 15px;
+}
 
+.nav-link {
+  margin-right: 8px;
 }

@@ -10,7 +10,7 @@ class Navbar extends Component {
         <div className="navbar-nav ms-auto">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#!">{this.props.account}</a>
+              <a className="nav-link" href="#!">{this.props.account.substring(0,6)}...{this.props.account.substring(38,42)}</a>
             </li>
           </ul>
         </div>
