@@ -38,11 +38,12 @@ class App extends Component {
     console.log(this.state)
     // Address
     const networkId = await web3.eth.net.getId()
-    console.log(networkId)
+    console.log("Network Id:", networkId)
     const networkData = Streamz.networks[networkId]
-    console.log(networkData)
-    const address = networkData.address
-    console.log(address)
+    console.log("Network Data:", networkData)
+
+    const streamz = new web3.eth.Contract(Streamz.abi, networkData.address)
+    console.log(streamz)
     // ABI
 
   }
