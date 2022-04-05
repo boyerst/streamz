@@ -39,6 +39,8 @@ class App extends Component {
     // Address
     const networkId = await web3.eth.net.getId()
     console.log(networkId)
+    const networkData = Streamz.networks[networkId]
+    console.log(networkData)
     // ABI
 
   }
