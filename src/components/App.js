@@ -41,6 +41,8 @@ class App extends Component {
     console.log(networkId)
     const networkData = Streamz.networks[networkId]
     console.log(networkData)
+    const address = networkData.address
+    console.log(address)
     // ABI
 
   }
