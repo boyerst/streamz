@@ -31,27 +31,25 @@ class App extends Component {
   async loadBlockchainData() {
     const web3 = window.web3
 
-    console.log(web3)
     const accounts = await web3.eth.getAccounts()
     console.log("Account #1:", accounts[0])
     this.setState({ account: accounts[0] })
-    console.log(this.state)
-    // Address
-    const networkId = await web3.eth.net.getId()
-    console.log("Network Id:", networkId)
-    const networkData = Streamz.networks[networkId]
-    console.log("Network Data:", networkData)
 
+    const networkId = await web3.eth.net.getId()
+    const networkData = Streamz.networks[networkId]
     const streamz = new web3.eth.Contract(Streamz.abi, networkData.address)
-    console.log(streamz)
-    // ABI
+
+    this.setState ({ streamz })
+    console.log(this.state)
+
 
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      account: ''
+      account: '',
+      streamz: null
     }
   }
 
