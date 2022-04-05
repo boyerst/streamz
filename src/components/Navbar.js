@@ -13,11 +13,17 @@ class Navbar extends Component {
           <ul className="navbar-nav px-3 ms-auto">
             <li>
             <small>
-              <a target="blank" alt="" className="text-white" rel="noopener noreferrer">{this.props.account.substring(0,6)}...{this.props.account.substring(38,42)}</a>
+              <a 
+                target="blank" 
+                alt="" 
+                className="text-white" 
+                href={"https://etherscan.io/address/" + this.props.account}
+                rel="noopener noreferrer">{this.props.account.substring(0,6)}...{this.props.account.substring(38,42)}
+              </a>
             </small>
               { this.props.account
                 ?
-                <img
+                <img 
                   alt=""
                   className='navbar-brand'
                   width='26'
