@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import Web3 from 'web3';
 import './App.css';
+import Streamz from '../abis/Streamz.json'
 
 
 class App extends Component {
@@ -35,6 +36,11 @@ class App extends Component {
     console.log("Account #1:", accounts[0])
     this.setState({ account: accounts[0] })
     console.log(this.state)
+    // Address
+    const networkId = await web3.eth.net.getId()
+    console.log(networkId)
+    // ABI
+
   }
 
   constructor(props) {

@@ -10,3 +10,8 @@
 .nav-link {
   margin-right: 8px;
 }
+
+nav a {
+  text-decoration: none;
+  color: green;
+}
