@@ -43,12 +43,15 @@ class App extends Component {
       this.setState ({ streamz })
       console.log(this.state)
 
+      const videosCount = await streamz.methods.videoCount().call()
+      console.log(videosCount)
+
     } else {
       window.alert("Streamz contract not deployed to the detected network")
     }
 
-
   }
+
 
   constructor(props) {
     super(props)
