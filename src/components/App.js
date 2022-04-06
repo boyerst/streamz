@@ -37,10 +37,15 @@ class App extends Component {
 
     const networkId = await web3.eth.net.getId()
     const networkData = Streamz.networks[networkId]
-    const streamz = new web3.eth.Contract(Streamz.abi, networkData.address)
+    if(networkData) {
+      const streamz = new web3.eth.Contract(Streamz.abi, networkData.address)
 
-    this.setState ({ streamz })
-    console.log(this.state)
+      this.setState ({ streamz })
+      console.log(this.state)
+
+    } else {
+      window.alert("Streamz contract not deployed to the detected network")
+    }
 
 
   }
