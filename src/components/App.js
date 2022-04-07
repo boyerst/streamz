@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
+import Main from './Main';
 import Web3 from 'web3';
 import './App.css';
 import Streamz from '../abis/Streamz.json'
@@ -72,7 +73,7 @@ class App extends Component {
     return (
       <div>
         <Navbar account={this.state.account} />
-   
+        <Main />
 
       </div>
     );
