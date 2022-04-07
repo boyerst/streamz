@@ -58,6 +58,12 @@ class App extends Component {
   }
 
 
+  // Upload Video
+  uploadVideo = title => {
+
+  }
+
+
   constructor(props) {
     super(props)
     this.state = {
