@@ -15,12 +15,14 @@ class Main extends Component {
             </div>
             <h3><b><i> Title </i></b></h3>
           </div>
-
-          <div>
+          <div className="col-md-2 overflow-auto text-center" style= {{ maxHeight: '768px', minWidth: '175px'}}>
             <h6><b> Share Video </b></h6>
-            <form action="">
+            <form onSubmit={(event) => {
+
+            }}>
+            &nbsp;
               <input type="file" />
-              <div>
+              <div className="form-group me-sm-2">
                 <input type="text" />
               </div>
               <button type="submit">Upload!</button>
