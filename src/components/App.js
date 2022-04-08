@@ -54,7 +54,6 @@ class App extends Component {
     } else {
       window.alert("Streamz contract not deployed to the detected network")
     }
-
   }
 
 
