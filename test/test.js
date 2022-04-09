@@ -60,6 +60,7 @@ contract('Streamz', ([deployer, uploader]) => {
       const video = await streamz.videos(videoCount)
       assert.equal(video.id.toNumber(), videoCount.toNumber(), 'Video Id is correct')
       assert.equal(video.hash, hash, 'Video hash is correct')
+      assert.equal(video.title, 'Video title', 'Video title is correct')
 
     })
 
