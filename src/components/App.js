@@ -47,7 +47,9 @@ class App extends Component {
       this.setState({ videosCount })
       for(var i = 1; i <= videosCount; i++) {
         const video = await streamz.methods.videos(i).call()
-        this.setState = [...this.state.videos, video]
+        this.setState({
+          videos: [...this.state.videos, video]
+        }) 
       }
       console.log(this.state)
 
@@ -67,7 +69,9 @@ class App extends Component {
     super(props)
     this.state = {
       account: '',
-      streamz: null
+      streamz: null,
+      videos: [],
+      videosCount: 0
     }
   }
 
