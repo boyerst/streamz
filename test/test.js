@@ -56,8 +56,10 @@ contract('Streamz', ([deployer, uploader]) => {
       await streamz.uploadVideo('Video hash', '', { from: uploader }).should.be.rejected;
     })    
 
-    xit('lists videos', async () => {
-        
+    it('lists videos', async () => {
+      const video = await streamz.videos(videoCount)
+      assert.equal(video.id.toNumber(), videoCount.toNumber(), 'Video Id is correct')
+
     })
 
   })
