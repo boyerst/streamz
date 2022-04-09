@@ -61,7 +61,7 @@ contract('Streamz', ([deployer, uploader]) => {
       assert.equal(video.id.toNumber(), videoCount.toNumber(), 'Video Id is correct')
       assert.equal(video.hash, hash, 'Video hash is correct')
       assert.equal(video.title, 'Video title', 'Video title is correct')
-
+      assert.equal(video.uploader, uploader, 'Uploader is correct')
     })
 
   })
