@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-
+import './App.css';
 
 class Main extends Component {
   render() {
     return (
       
-      <div className="container-fluid">
+      <div className="container-fluid font-monospace">
         <br></br>
         <br></br>
-        <div className="row">
+        <div className="col-12 row">
           <div className="col-md-10">
             <div className="embed-responsive embed-responsive-16by9" style={{ maxHeight: '768px' }}>
               <video src="" controls></video>
@@ -21,11 +21,23 @@ class Main extends Component {
 
             }}>
             &nbsp;
-              <input type="file" accept=".mp4, .mkv, .ogg, .wmv" style={{ width: '250px' }} />
+              <input 
+                type="file" 
+                accept=".mp4, .mkv, .ogg, .wmv" 
+                style={{ width: '250px' }} />
               <div className="form-group me-sm-2">
-                <input id="videoTitle" type="text" className="form-control-sm" placeholder="Title..." required/>
+                <br></br>
+                <input 
+                  id="videoTitle" 
+                  type="text" 
+                  className="form-control-sm" 
+                  placeholder="Title..." 
+                  required />
               </div>
-              <button type="submit" className="btn btn-danger btn-block btn-sm">Upload!</button>
+              &nbsp;
+              <div className="d-grid col-9 mx-auto">
+              <button type="submit" className="btn btn-danger btn-sm">Upload!</button>
+              </div>
             </form>
 
           </div>
