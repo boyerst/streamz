@@ -25,7 +25,7 @@ class Main extends Component {
               <div className="form-group me-sm-2">
                 <input type="text" />
               </div>
-              <button type="submit">Upload!</button>
+              <button type="submit" className="btn btn-danger btn-block btn-sm">Upload!</button>
             </form>
 
           </div>

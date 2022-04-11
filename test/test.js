@@ -63,8 +63,8 @@ contract('Streamz', ([deployer, uploader]) => {
       assert.equal(video.title, 'Video title', 'Video title is correct')
       assert.equal(video.uploader, uploader, 'Uploader is correct')
     })
-
   })
-
-
 })
+
+
+
