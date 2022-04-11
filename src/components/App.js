@@ -58,6 +58,18 @@ class App extends Component {
     }
   }
 
+  captureFile = event => {
+    event.preventDefault()
+    const file = event.target.file[0]
+    const reader = new window.FileReader()
+    reader.readAsArrayBuffer(file)
+    reader.onloadend = () => {
+      this.setState({ buffer: Buffer(reader.result) })
+      console.log('buffer', this.state.buffer)
+    }
+  }
+
+
 
   // Upload Video
   uploadVideo = title => {
@@ -81,8 +93,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar account={this.state.account} />
-        <Main />
+        <Navbar 
+          account={this.state.account} />
+        <Main 
+          captureFile={this.state.captureFile} />
 
       </div>
     );

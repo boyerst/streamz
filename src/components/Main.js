@@ -24,7 +24,8 @@ class Main extends Component {
               <input 
                 type="file" 
                 accept=".mp4, .mkv, .ogg, .wmv" 
-                style={{ width: '250px' }} />
+                style={{ width: '250px' }} 
+                onChange={this.props.captureFile} />
               <div className="form-group me-sm-2">
                 <br></br>
                 <input 
@@ -36,7 +37,7 @@ class Main extends Component {
               </div>
               &nbsp;
               <div className="d-grid col-9 mx-auto">
-              <button type="submit" className="btn btn-danger btn-sm">Upload!</button>
+                <button type="submit" className="btn btn-danger btn-sm">Upload!</button>
               </div>
             </form>
 
