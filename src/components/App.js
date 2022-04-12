@@ -60,7 +60,7 @@ class App extends Component {
 
   captureFile = event => {
     event.preventDefault()
-    const file = event.target.file[0]
+    const file = event.target.files[0]
     const reader = new window.FileReader()
     reader.readAsArrayBuffer(file)
     reader.onloadend = () => {
@@ -96,7 +96,7 @@ class App extends Component {
         <Navbar 
           account={this.state.account} />
         <Main 
-          captureFile={this.state.captureFile} />
+          captureFile={this.captureFile} />
 
       </div>
     );
