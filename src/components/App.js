@@ -4,6 +4,11 @@ import Main from './Main';
 import Web3 from 'web3';
 import './App.css';
 import Streamz from '../abis/Streamz.json'
+import { create } from 'ipfs-http-client'
+
+// // const ipfsClient = require('ipfs-http-client')
+// const { create } = require("ipfs-http-client")
+const ipfs = create({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
 
 
 class App extends Component {
@@ -76,10 +81,47 @@ class App extends Component {
 
 
 
-  // Upload Video
-  uploadVideo = title => {
+  uploadVideo = async (title) => {
     console.log("Uploading Video to IPFS...")
+    // console.log(ipfs)
+    const video = await ipfs.add(this.state.buffer)
+    // console.log(video)
+    this.setState({ loading: true })
+    this.state.streamz.methods.uploadVideo(video.path, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
+      this.setState({ loading: false })   
+    })
+    console.log(this.state)
   }
+  
+  // uploadVideo = (title) => {
+  //   console.log("Uploading Video to IPFS...")
+  //   console.log(ipfs)
+  //   const video = ipfs.add(this.state.buffer)
+  //   console.log(video)
+  //   this.setState({ loading: true })
+  //   this.state.streamz.methods.uploadVideo(video.path, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
+  //     this.setState({ loading: false })   
+  //   })
+  //   console.log(this.state)
+  // }
+  
+  // Upload Video
+  // uploadVideo = async (title) => {
+  //   console.log("Uploading Video to IPFS...")
+  //   console.log(ipfs)
+  //   await ipfs.add(this.state.buffer, (error, result) => {
+  //     console.log('IPFS Result', result)
+  //     if(error) {
+  //       console.error(error)
+  //       return
+  //     }
+  //     this.setState({ loading: true })
+  //     this.state.streamz.methods.uploadVideo(result[0].hash, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
+  //       this.setState({ loading: false })   
+  //     })
+  //     console.log(this.state)
+  //   })
+  // }
 
 
   constructor(props) {
@@ -110,7 +152,8 @@ class App extends Component {
           <Main 
             captureFile={this.captureFile} 
             uploadVideo={this.uploadVideo} 
-            currentTitle={this.state.currentTitle} />
+            currentTitle={this.state.currentTitle} 
+            currentHash={this.state.currentHash} />
         }
 
       </div>

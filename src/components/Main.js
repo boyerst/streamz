@@ -11,8 +11,9 @@ class Main extends Component {
 
         <div className="col-12 row">
           <div className="col-md-10">
-            <div className="embed-responsive embed-responsive-16by9" style={{ maxHeight: '768px' }}>
-              <video src="" controls></video>
+ {/*           <div className="embed-responsive embed-responsive-16by9" style={{ maxHeight: '768px' }}>*/}
+            <div>
+              <video className="modal-fullscreen-sm-down" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} controls></video>
             </div>
             <h3><b><i> {this.props.currentTitle} </i></b></h3>
           </div>
@@ -35,7 +36,7 @@ class Main extends Component {
               <div className="form-group me-sm-2">
                 <br></br>
                 <input 
-                  // id="videoTitle" 
+                  id="videoTitle" 
                   type="text" 
                   className="form-control-sm" 
                   placeholder="Title..." 
