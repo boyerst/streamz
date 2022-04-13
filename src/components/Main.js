@@ -14,7 +14,7 @@ class Main extends Component {
             <div className="embed-responsive embed-responsive-16by9" style={{ maxHeight: '768px' }}>
               <video src="" controls></video>
             </div>
-            <h3><b><i> TITLE </i></b></h3>
+            <h3><b><i> {this.props.currentTitle} </i></b></h3>
           </div>
 
 

@@ -51,7 +51,12 @@ class App extends Component {
           videos: [...this.state.videos, video]
         }) 
       }
-      console.log(this.state)
+      const latest = await streamz.methods.videos(videosCount).call()
+      this.setState({
+        currentHash: latest.hash,
+        currentTitle: latest.title
+      })
+      this.setState ({ loading: false})
 
     } else {
       window.alert("Streamz contract not deployed to the detected network")
@@ -84,7 +89,9 @@ class App extends Component {
       streamz: null,
       videos: [],
       videosCount: 0,
-      loading: true
+      loading: true,
+      currentHash: null, 
+      currentTitle: null
     }
   }
 
@@ -102,7 +109,8 @@ class App extends Component {
           :
           <Main 
             captureFile={this.captureFile} 
-            uploadVideo={this.uploadVideo} />
+            uploadVideo={this.uploadVideo} 
+            currentTitle={this.state.currentTitle} />
         }
 
       </div>
