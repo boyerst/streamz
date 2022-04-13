@@ -83,7 +83,8 @@ class App extends Component {
       account: '',
       streamz: null,
       videos: [],
-      videosCount: 0
+      videosCount: 0,
+      loading: true
     }
   }
 
@@ -95,9 +96,14 @@ class App extends Component {
       <div>
         <Navbar 
           account={this.state.account} />
-        <Main 
-          captureFile={this.captureFile} 
-          uploadVideo={this.uploadVideo} />
+        { this.state.loading 
+          ?
+          <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
+          :
+          <Main 
+            captureFile={this.captureFile} 
+            uploadVideo={this.uploadVideo} />
+        }
 
       </div>
     );
