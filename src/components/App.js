@@ -73,7 +73,7 @@ class App extends Component {
 
   // Upload Video
   uploadVideo = title => {
-
+    console.log("Uploading Video to IPFS...")
   }
 
 
@@ -96,7 +96,8 @@ class App extends Component {
         <Navbar 
           account={this.state.account} />
         <Main 
-          captureFile={this.captureFile} />
+          captureFile={this.captureFile} 
+          uploadVideo={this.uploadVideo} />
 
       </div>
     );

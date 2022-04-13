@@ -14,7 +14,7 @@ class Main extends Component {
             <div className="embed-responsive embed-responsive-16by9" style={{ maxHeight: '768px' }}>
               <video src="" controls></video>
             </div>
-            <h3><b><i> Title </i></b></h3>
+            <h3><b><i> TITLE </i></b></h3>
           </div>
 
 
@@ -23,7 +23,7 @@ class Main extends Component {
             <form onSubmit={(event) => {
               event.preventDefault()
               const title = this.videoTitle.value
-              console.log(title)
+              this.props.uploadVideo(title)
 
             }}>
             &nbsp;
