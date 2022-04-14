@@ -6,13 +6,11 @@ import './App.css';
 import Streamz from '../abis/Streamz.json'
 import { create } from 'ipfs-http-client'
 
-// // const ipfsClient = require('ipfs-http-client')
-// const { create } = require("ipfs-http-client")
+
 const ipfs = create({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
 
 
 class App extends Component {
-
 
 
   async componentWillMount() {
@@ -45,9 +43,7 @@ class App extends Component {
     const networkData = Streamz.networks[networkId]
     if(networkData) {
       const streamz = new web3.eth.Contract(Streamz.abi, networkData.address)
-
       this.setState({ streamz })
-
       const videosCount = await streamz.methods.videoCount().call()
       this.setState({ videosCount })
       for(var i = 1; i <= videosCount; i++) {
@@ -80,12 +76,12 @@ class App extends Component {
   }
 
 
-
   uploadVideo = async (title) => {
     console.log("Uploading Video to IPFS...")
     // console.log(ipfs)
     const video = await ipfs.add(this.state.buffer)
     // console.log(video)
+    console.log(video.path)
     this.setState({ loading: true })
     this.state.streamz.methods.uploadVideo(video.path, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
       this.setState({ loading: false })   
@@ -93,35 +89,10 @@ class App extends Component {
     console.log(this.state)
   }
   
-  // uploadVideo = (title) => {
-  //   console.log("Uploading Video to IPFS...")
-  //   console.log(ipfs)
-  //   const video = ipfs.add(this.state.buffer)
-  //   console.log(video)
-  //   this.setState({ loading: true })
-  //   this.state.streamz.methods.uploadVideo(video.path, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
-  //     this.setState({ loading: false })   
-  //   })
-  //   console.log(this.state)
-  // }
-  
-  // Upload Video
-  // uploadVideo = async (title) => {
-  //   console.log("Uploading Video to IPFS...")
-  //   console.log(ipfs)
-  //   await ipfs.add(this.state.buffer, (error, result) => {
-  //     console.log('IPFS Result', result)
-  //     if(error) {
-  //       console.error(error)
-  //       return
-  //     }
-  //     this.setState({ loading: true })
-  //     this.state.streamz.methods.uploadVideo(result[0].hash, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
-  //       this.setState({ loading: false })   
-  //     })
-  //     console.log(this.state)
-  //   })
-  // }
+  changeVideo = (hash, title) => {
+    this.setState({'currentHash': hash});
+    this.setState({'currentTitle': title});
+  }
 
 
   constructor(props) {
@@ -150,10 +121,12 @@ class App extends Component {
           <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
           :
           <Main 
+            videos={this.state.videos}
             captureFile={this.captureFile} 
             uploadVideo={this.uploadVideo} 
             currentTitle={this.state.currentTitle} 
-            currentHash={this.state.currentHash} />
+            currentHash={this.state.currentHash} 
+            changeVideo={this.changeVideo} />
         }
 
       </div>
