@@ -14,14 +14,15 @@ class Main extends Component {
         <div className="col-12 row">
           <div className="col-md-10">
 
-            <div>
-              <video className="modal-fullscreen-sm-down" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} controls></video>
+            <div className="center-text ms-5">
+              <video className="modal-fullscreen-sm-down ms-5" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} style={{ maxWidth: '1200px' }} controls></video>
+             {/* <video className="modal-dialog modal-fullscreen-lg-down" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} controls></video>*/}
             </div>
             <h3><b><i> {this.props.currentTitle} </i></b></h3>
           </div>
 
 
-          <div className="col-md-2 overflow-visible text-center" style= {{ maxHeight: '768px', minWidth: '175px'}}>
+          <div className="col-md-2 overflow-scroll text-center" style={{ maxHeight: '768px', minWidth: '175px'}}>
 
             <h5>
               <img src={share} alt=""></img>
@@ -58,13 +59,13 @@ class Main extends Component {
 
             { this.props.videos.map((video, key) => {
               return (
-                <div className="card mb-3 text-center bg-light mx-auto overflow-auto" style={{ width: '175px' }} key={key} >
+                <div className="card mb-3 text-center bg-light mx-auto" style={{ width: '225px' }} key={key} >
                   <div className="card-title bg-dark">
                     <small className="text-white"><b>{video.title}</b></small>
                   </div>
-                  <div>
-                      <p onClick={() => this.props.changeVideo(video.hash, video.title)}>
-                        <video src={`https://ipfs.infura.io/ipfs/${video.hash}`} style={{ width: '150px' }} />
+                  <div className="mx-auto" style={{ width: '210px'}}>
+                      <p className="mx-auto" onClick={() => this.props.changeVideo(video.hash, video.title)}>
+                        <video src={`https://ipfs.infura.io/ipfs/${video.hash}`} style={{ width: '190px' }} />
                       </p>
                   </div>
                 </div>

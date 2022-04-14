@@ -8,6 +8,7 @@ class Navbar extends Component {
     return(
   
       <nav className="navbar navbar-expand-lg navbar-dark p-0 shadow text-monospace"> 
+        
         <a className="navbar-brand" href="#!">Streamz</a>
   
           <ul className="navbar-nav px-3 ms-auto">

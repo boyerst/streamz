@@ -60,7 +60,7 @@ class App extends Component {
       this.setState ({ loading: false})
 
     } else {
-      window.alert("Streamz contract not deployed to the detected network")
+      window.alert("Incorrect Network Detected - Please Change.")
     }
   }
 
@@ -115,7 +115,8 @@ class App extends Component {
     return (
       <div>
         <Navbar 
-          account={this.state.account} />
+          account={this.state.account} 
+          logout={this.logout} />
         { this.state.loading 
           ?
           <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
