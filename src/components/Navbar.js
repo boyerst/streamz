@@ -35,6 +35,22 @@ class Navbar extends Component {
                 <span></span>
               }
             </li>
+              { this.props.account
+                ?
+              <button 
+                className="btn-sm"
+                id="connectButton"
+                disabled
+              > 
+                Connect 
+              </button>
+              :
+              <button
+                className="btn-sm"
+                id="connectedButton"
+              >
+              </button>
+              }
           </ul>
       </nav>
 
