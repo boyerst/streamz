@@ -13,15 +13,15 @@ class Navbar extends Component {
   
           <ul className="navbar-nav px-3 ms-auto">
             <li>
-            <small>
-              <a 
-                target="blank" 
-                alt="" 
-                className="text-white" 
-                href={"https://etherscan.io/address/" + this.props.account}
-                rel="noopener noreferrer">{this.props.account.substring(0,6)}...{this.props.account.substring(38,42)}
-              </a>
-            </small>
+              <small>
+                <a 
+                  target="blank" 
+                  alt="" 
+                  className="text-white" 
+                  href={"https://etherscan.io/address/" + this.props.account}
+                  rel="noopener noreferrer">{this.props.account.substring(0,6)}...{this.props.account.substring(38,42)}
+                </a>
+              </small>
               { this.props.account
                 ?
                 <img 
@@ -35,7 +35,13 @@ class Navbar extends Component {
                 <span></span>
               }
             </li>
-              { this.props.account
+            <button
+              className="btn-sm"
+              id="connectButton"
+            >
+              Connect
+            </button>
+{/*              { this.props.account
                 ?
               <button 
                 className="btn-sm"
@@ -49,8 +55,9 @@ class Navbar extends Component {
                 className="btn-sm"
                 id="connectedButton"
               >
+                Connect
               </button>
-              }
+              }*/}
           </ul>
       </nav>
 

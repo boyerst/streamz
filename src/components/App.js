@@ -39,6 +39,7 @@ class App extends Component {
     console.log("Account #1:", accounts[0])
     this.setState({ account: accounts[0] })
 
+
     const networkId = await web3.eth.net.getId()
     const networkData = Streamz.networks[networkId]
     if(networkData) {
@@ -104,7 +105,7 @@ class App extends Component {
       videosCount: 0,
       loading: true,
       currentHash: null, 
-      currentTitle: null
+      currentTitle: null,
     }
   }
 

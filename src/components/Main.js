@@ -13,7 +13,6 @@ class Main extends Component {
 
         <div className="col-12 row">
           <div className="col-md-10">
-
             <div className="center-text ms-5">
               <video className="modal-fullscreen-sm-down ms-5" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} style={{ maxWidth: '1200px' }} controls></video>
              {/* <video className="modal-dialog modal-fullscreen-lg-down" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} controls></video>*/}
@@ -21,19 +20,15 @@ class Main extends Component {
             <h3><b><i> {this.props.currentTitle} </i></b></h3>
           </div>
 
-
           <div className="col-md-2 overflow-scroll text-center" style={{ maxHeight: '768px', minWidth: '175px'}}>
-
             <h5>
               <img src={share} alt=""></img>
               <b> Share Video </b>
             </h5>
-            
             <form onSubmit={(event) => {
               event.preventDefault()
               const title = this.videoTitle.value
               this.props.uploadVideo(title)
-
             }}>
             &nbsp;
               <input 
@@ -71,8 +66,7 @@ class Main extends Component {
                 </div>
               )
             })}
-
-
+            
           </div>
         </div>
       </div>
