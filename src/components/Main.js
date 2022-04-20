@@ -14,7 +14,7 @@ class Main extends Component {
         <div className="col-12 row">
           <div className="col-md-10">
             <div className="center-text ms-5">
-              <video className="modal-fullscreen-sm-down ms-5" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} style={{ maxWidth: '1200px' }} controls></video>
+              <video className="container-fluid modal-fullscreen-sm-down ms-5" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} style={{ maxWidth: '1200px' }} controls></video>
              {/* <video className="modal-dialog modal-fullscreen-lg-down" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} controls></video>*/}
             </div>
             <h3><b><i> {this.props.currentTitle} </i></b></h3>
