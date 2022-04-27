@@ -7,6 +7,7 @@ import Streamz from '../abis/Streamz.json'
 import { create } from 'ipfs-http-client'
 
 
+
 const ipfs = create({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
 
 
@@ -130,7 +131,7 @@ class App extends Component {
             currentHash={this.state.currentHash} 
             changeVideo={this.changeVideo} />
         }
-
+          
       </div>
     );
   }
