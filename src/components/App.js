@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 // import Navbar from './Navbar';
-import Nav from './Nav';
-import Main from './Main';
-import Web3 from 'web3';
-import './App.css';
+import Nav from './Nav'
+import Main from './Main'
+import Web3 from 'web3'
+import './App.css'
 import Streamz from '../abis/Streamz.json'
 import { create } from 'ipfs-http-client'
 
