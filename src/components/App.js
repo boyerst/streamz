@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
+import Nav from './Nav';
 import Main from './Main';
 import Web3 from 'web3';
 import './App.css';
@@ -116,9 +117,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar 
+          <Nav />
+{/*        <Navbar 
           account={this.state.account} 
-          logout={this.logout} />
+          logout={this.logout} />*/}
         { this.state.loading 
           ?
           <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
