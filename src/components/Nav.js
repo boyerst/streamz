@@ -24,18 +24,27 @@ function Nav() {
 
 
   return (
+    
 
-    <Navbar className= "navbar-dark p-0 shadow text-monospace ">
-      <Navbar.Brand href="#!">Streamz</Navbar.Brand> 
-      <Button className="ms-auto me-3" size="sm" variant="outline-secondary">
+    <Navbar className= "navbar-dark p-0 shadow text-monospace">
+      
+      <Navbar.Brand href="#!">
+        Streamz
+      </Navbar.Brand> 
+      <Button className="ms-auto me-3" size="sm" variant="outline-light">
         {wallet.account ? wallet.account.substring(0,6) : ''}...{wallet.account ? wallet.account.substring(38,42) : '0x0'}
       </Button>
-      <Button onClick={connectWallet}>
-        Connect 
-      </Button>
+
+      { wallet.status === 'connected' ? (
+        <Button className="nav-item" size="sm" variant="outline-light" onClick={() => wallet.reset()}> 
+          Disconnect 
+        </Button> 
+      ):(
+        <Button className="me-3" size="sm" variant="outline-light" onClick={connectWallet}>
+          Connect 
+        </Button>   
+      )}
     </Navbar>
-    
-    
   )
 }
 
