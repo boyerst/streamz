@@ -1,13 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
+import { useWallet, UseWalletProvider } from 'use-wallet'
+import Web3 from 'web3';
+import { Button, Navbar } from 'react-bootstrap';
 
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark p-0 shadow text-monospace">
-      <a className="navbar-brand" href="#!">Streamz</a> 
-    </nav>
-    
+
+    <Navbar className= "navbar-dark p-0 shadow text-monospace ">
+      <Navbar.Brand href="#!">Streamz</Navbar.Brand> 
+      <Button className="justify-content-end" size="sm" variant="outline-secondary"> Button </Button>
+    </Navbar>
+
   )
 }
 
