@@ -117,7 +117,7 @@ class App extends Component {
   render() {
     return (
       <div>
-          <Nav />
+        <Nav />
 {/*        <Navbar 
           account={this.state.account} 
           logout={this.logout} />*/}
