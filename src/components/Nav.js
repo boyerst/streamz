@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import Web3 from 'web3'
-import { Button, Navbar } from 'react-bootstrap';
+import { Button, ButtonToolbar, Navbar } from 'react-bootstrap';
 
 
 
@@ -15,6 +15,7 @@ function Nav() {
   console.log(wallet.status)
   console.log(web3)
   console.log(wallet.account)
+  console.log(wallet.balance)
 
 
   const connectWallet = async (e) => {
@@ -25,25 +26,33 @@ function Nav() {
 
   return (
     
-
     <Navbar className= "navbar-dark p-0 shadow text-monospace">
-      
+
       <Navbar.Brand href="#!">
         Streamz
       </Navbar.Brand> 
-      <Button className="ms-auto me-3" size="sm" variant="outline-light">
-        {wallet.account ? wallet.account.substring(0,6) : ''}...{wallet.account ? wallet.account.substring(38,42) : '0x0'}
-      </Button>
 
       { wallet.status === 'connected' ? (
-        <Button className="nav-item" size="sm" variant="outline-light" onClick={() => wallet.reset()}> 
-          Disconnect 
-        </Button> 
+
+        <ButtonToolbar className="ms-auto me-3">
+          <Button className="me-2" variant="outline-light" size="sm">
+            <a>{wallet.account ? wallet.account.substring(0,6) : '0x0'}...{wallet.account ? wallet.account.substring(38,42) : ''}</a>
+            &nbsp;|&nbsp;
+            {web3.utils.fromWei(wallet.balance, 'ether')} ETH
+          </Button>
+          <Button variant="outline-light" size="sm" onClick={() => wallet.reset()}> 
+            Disconnect 
+          </Button>
+        </ButtonToolbar> 
+
       ):(
-        <Button className="me-3" size="sm" variant="outline-light" onClick={connectWallet}>
-          Connect 
-        </Button>   
+
+        <Button className="ms-auto me-3" size="sm" variant="outline-light" onClick={connectWallet}>
+          Connect Wallet
+        </Button>  
+
       )}
+
     </Navbar>
   )
 }
