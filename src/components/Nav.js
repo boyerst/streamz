@@ -3,6 +3,7 @@ import './App.css'
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import Web3 from 'web3'
 import { Button, ButtonToolbar, Navbar } from 'react-bootstrap';
+import {ReactComponent as Wallet } from '../wallet.svg'
 
 
 
@@ -36,6 +37,7 @@ function Nav() {
 
         <ButtonToolbar className="ms-auto me-3">
           <Button className="me-2" variant="outline-light" size="sm">
+            <Wallet className="me-2" width="25" height="23" fill="white"/>
             <a>{wallet.account ? wallet.account.substring(0,6) : '0x0'}...{wallet.account ? wallet.account.substring(38,42) : ''}</a>
             &nbsp;|&nbsp;
             {web3.utils.fromWei(wallet.balance, 'ether')} ETH
