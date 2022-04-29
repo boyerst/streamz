@@ -15,6 +15,7 @@ class App extends Component {
 
 
   async componentWillMount() {
+
     await this.loadWeb3()
     await this.loadBlockchainData()
   }
@@ -33,12 +34,14 @@ class App extends Component {
     }
   }
 
+
   async loadBlockchainData() {
     const web3 = window.web3
 
     const accounts = await web3.eth.getAccounts()
     console.log("Account #1:", accounts[0])
     this.setState({ account: accounts[0] })
+    console.log("Account #1 connected")
 
 
     const networkId = await web3.eth.net.getId()
@@ -116,7 +119,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Nav />
+        <Nav 
+        // loadWeb3={this.loadWeb3}
+        // loadBlockchainData={this.loadBlockchainData}
+        />
         { this.state.loading 
         ?
         <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
