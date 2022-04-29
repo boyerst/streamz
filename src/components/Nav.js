@@ -3,7 +3,7 @@ import './App.css'
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import Web3 from 'web3'
 import { Button, ButtonToolbar, Navbar } from 'react-bootstrap';
-import {ReactComponent as Wallet } from '../wallet.svg'
+import { ReactComponent as Wallet } from '../wallet.svg'
 
 
 
@@ -20,8 +20,7 @@ function Nav() {
   }
 
 
-  return (
-    
+  return (  
     <Navbar className= "navbar-dark p-0 shadow text-monospace">
 
       <Navbar.Brand href="#!">
@@ -29,7 +28,6 @@ function Nav() {
       </Navbar.Brand> 
 
       { wallet.status === 'connected' ? (
-
         <ButtonToolbar className="ms-auto me-3">
           <Button className="btn-sm me-2" variant="outline-light">
             <Wallet className="pe-2" width="25" height="25" fill="white" />
@@ -41,13 +39,10 @@ function Nav() {
             Disconnect 
           </Button>
         </ButtonToolbar> 
-
       ):(
-
         <Button className="ms-auto me-3" size="sm" variant="outline-light" onClick={connectWallet}>
           Connect Wallet
         </Button>  
-
       )}
 
     </Navbar>
@@ -60,7 +55,6 @@ export default () => (
   <UseWalletProvider
     chainId={1337}
     connectors={{
-      // This is how connectors get configured
       provided: { provider: window.cleanEthereum },
   }}>
     <Nav />   

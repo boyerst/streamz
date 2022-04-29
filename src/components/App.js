@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import Navbar from './Navbar';
 import Nav from './Nav'
 import Main from './Main'
 import Web3 from 'web3'
@@ -118,22 +117,18 @@ class App extends Component {
     return (
       <div>
         <Nav />
-{/*        <Navbar 
-          account={this.state.account} 
-          logout={this.logout} />*/}
         { this.state.loading 
-          ?
-          <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-          :
-          <Main 
-            videos={this.state.videos}
-            captureFile={this.captureFile} 
-            uploadVideo={this.uploadVideo} 
-            currentTitle={this.state.currentTitle} 
-            currentHash={this.state.currentHash} 
-            changeVideo={this.changeVideo} />
+        ?
+        <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
+        :
+        <Main 
+          videos={this.state.videos}
+          captureFile={this.captureFile} 
+          uploadVideo={this.uploadVideo} 
+          currentTitle={this.state.currentTitle} 
+          currentHash={this.state.currentHash} 
+          changeVideo={this.changeVideo} />
         }
-          
       </div>
     );
   }
