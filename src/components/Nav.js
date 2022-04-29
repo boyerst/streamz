@@ -16,8 +16,9 @@ function Nav() {
 
   const connectWallet = async (e) => {
     e.preventDefault()
-    await wallet.connect()    
+    await wallet.connect()  
   }
+
 
 
   return (  
@@ -40,7 +41,7 @@ function Nav() {
           </Button>
         </ButtonToolbar> 
       ):(
-        <Button className="ms-auto me-3" size="sm" variant="outline-light" onClick={connectWallet}>
+        <Button className="ms-auto me-3" size="sm" variant="outline-light" onClick={(e)=> {connectWallet; this.props.loadBlockchainData()}}>
           Connect Wallet
         </Button>  
       )}

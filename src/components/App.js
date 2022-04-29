@@ -17,7 +17,7 @@ class App extends Component {
   async componentWillMount() {
 
     await this.loadWeb3()
-    await this.loadBlockchainData()
+    // await this.loadBlockchainData()
   }
 
 
@@ -34,8 +34,7 @@ class App extends Component {
     }
   }
 
-
-  async loadBlockchainData() {
+  loadBlockchainData = async () => {
     const web3 = window.web3
 
     const accounts = await web3.eth.getAccounts()
@@ -68,6 +67,41 @@ class App extends Component {
       window.alert("Incorrect Network Detected - Please Change.")
     }
   }
+
+
+  // async loadBlockchainData() {
+  //   const web3 = window.web3
+
+  //   const accounts = await web3.eth.getAccounts()
+  //   console.log("Account #1:", accounts[0])
+  //   this.setState({ account: accounts[0] })
+  //   console.log("Account #1 connected")
+
+
+  //   const networkId = await web3.eth.net.getId()
+  //   const networkData = Streamz.networks[networkId]
+  //   if(networkData) {
+  //     const streamz = new web3.eth.Contract(Streamz.abi, networkData.address)
+  //     this.setState({ streamz })
+  //     const videosCount = await streamz.methods.videoCount().call()
+  //     this.setState({ videosCount })
+  //     for(var i = 1; i <= videosCount; i++) {
+  //       const video = await streamz.methods.videos(i).call()
+  //       this.setState({
+  //         videos: [...this.state.videos, video]
+  //       }) 
+  //     }
+  //     const latest = await streamz.methods.videos(videosCount).call()
+  //     this.setState({
+  //       currentHash: latest.hash,
+  //       currentTitle: latest.title
+  //     })
+  //     this.setState ({ loading: false})
+
+  //   } else {
+  //     window.alert("Incorrect Network Detected - Please Change.")
+  //   }
+  // }
 
   captureFile = event => {
     event.preventDefault()
@@ -111,6 +145,7 @@ class App extends Component {
       currentHash: null, 
       currentTitle: null,
     }
+    this.loadBlockchainData = this.loadBlockchainData.bind(this)
   }
 
 
@@ -121,7 +156,7 @@ class App extends Component {
       <div>
         <Nav 
         // loadWeb3={this.loadWeb3}
-        // loadBlockchainData={this.loadBlockchainData}
+        loadBlockchainData={this.loadBlockchainData}
         />
         { this.state.loading 
         ?
