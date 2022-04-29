@@ -1,3 +1,9 @@
+
+.btn-sm:hover svg {
+  fill: black;
+}
+
+
 .navbar {
   background-color: #6E31E0;
   font-family: "Monaco";
@@ -10,6 +16,7 @@
 .nav-link {
   margin-right: 8px;
 }
+
 
 nav a {
   text-decoration: none;
@@ -25,3 +32,6 @@ nav a {
 scrollbar-width: none; /* Firefox */
 
 -ms-overflow-style: none; /* IE 10+ */
+
+
+

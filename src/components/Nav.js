@@ -36,13 +36,13 @@ function Nav() {
       { wallet.status === 'connected' ? (
 
         <ButtonToolbar className="ms-auto me-3">
-          <Button className="me-2" variant="outline-light" size="sm">
-            <Wallet className="me-2" width="25" height="23" fill="white"/>
+          <Button className="btn-sm me-2" variant="outline-light">
+            <Wallet className="pe-2" width="25" height="25" fill="white" />
             <a>{wallet.account ? wallet.account.substring(0,6) : '0x0'}...{wallet.account ? wallet.account.substring(38,42) : ''}</a>
             &nbsp;|&nbsp;
             {web3.utils.fromWei(wallet.balance, 'ether')} ETH
           </Button>
-          <Button variant="outline-light" size="sm" onClick={() => wallet.reset()}> 
+          <Button className="btn-sm" variant="outline-light" onClick={() => wallet.reset()}> 
             Disconnect 
           </Button>
         </ButtonToolbar> 
