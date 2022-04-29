@@ -12,11 +12,6 @@ function Nav() {
   const wallet = useWallet()
   const web3 = new Web3(Web3.currentProvider)
 
-  console.log(wallet)
-  console.log(wallet.status)
-  console.log(web3)
-  console.log(wallet.account)
-  console.log(wallet.balance)
 
 
   const connectWallet = async (e) => {

@@ -21,7 +21,7 @@ class Main extends Component {
           </div>
 
           <div className="col-md-3 overflow-scroll text-center" style={{ maxHeight: '768px', minWidth: '175px'}}>
-            <h5>
+            <h5 className="mb-4">
               <img src={share} alt=""></img>
               <b> Share Video </b>
             </h5>
@@ -36,7 +36,7 @@ class Main extends Component {
                 accept=".mp4, .mkv, .ogg, .wmv" 
                 style={{ width: '250px' }} 
                 onChange={this.props.captureFile} />
-              <div className="form-group me-sm-2">
+              <div className="form-group me-sm-3">
                 <br></br>
                 <input 
                   id="videoTitle" 
@@ -44,10 +44,11 @@ class Main extends Component {
                   className="form-control-sm" 
                   placeholder="Title..." 
                   ref={(input) => { this.videoTitle = input }}
-                  required />
+                  required 
+                  className="col-7 ms-3"/>
               </div>
               &nbsp;
-              <div className="d-grid col-9 mx-auto">
+              <div className="d-grid col-7 mx-auto">
                 <button type="submit" className="mb-5 btn btn-danger btn-sm">Upload!</button>
               </div>
             </form>
