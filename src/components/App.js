@@ -42,8 +42,6 @@ class App extends Component {
     console.log("Account #1:", accounts[0])
     this.setState({ account: accounts[0] })
     console.log("Account #1 connected")
-
-
     const networkId = await web3.eth.net.getId()
     const networkData = Streamz.networks[networkId]
     if(networkData) {

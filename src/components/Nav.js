@@ -17,6 +17,8 @@ function Nav() {
   const connectWallet = async (e) => {
     e.preventDefault()
     await wallet.connect()    
+    console.log(wallet)
+    console.log(wallet.networkName)
   }
 
 
