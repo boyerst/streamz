@@ -23,7 +23,7 @@ function Nav() {
 
 
   return (  
-    <Navbar className= "navbar-dark p-0 shadow text-monospace">
+    <Navbar className= "navbar-dark p-1 shadow text-monospace">
 
       <Navbar.Brand href="#!">
         Streamz

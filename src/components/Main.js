@@ -55,13 +55,13 @@ class Main extends Component {
 
             { this.props.videos.map((video, key) => {
               return (
-                <div className="card mb-3 text-center bg-light mx-auto" style={{ width: '225px' }} key={key} >
+                <div className="card mb-3 text-center bg-light mx-auto" style={{ width: '250px' }} key={key} >
                   <div className="card-title bg-dark">
                     <small className="text-white"><b>{video.title}</b></small>
                   </div>
                   <div className="mx-auto" style={{ width: '210px'}}>
                       <p className="mx-auto" onClick={() => this.props.changeVideo(video.hash, video.title)}>
-                        <video src={`https://ipfs.infura.io/ipfs/${video.hash}`} style={{ width: '190px' }} />
+                        <video src={`https://ipfs.infura.io/ipfs/${video.hash}`} style={{ width: '200px' }} />
                       </p>
                   </div>
                 </div>
