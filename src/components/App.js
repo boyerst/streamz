@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
+import UseWalletProvider from './Nav'
 import Main from './Main'
 import Web3 from 'web3'
 import './App.css'
@@ -145,7 +146,6 @@ class App extends Component {
       currentHash: null, 
       currentTitle: null,
     }
-    this.loadBlockchainData = this.loadBlockchainData.bind(this)
   }
 
 
@@ -155,8 +155,8 @@ class App extends Component {
     return (
       <div>
         <Nav 
-        // loadWeb3={this.loadWeb3}
-        loadBlockchainData={this.loadBlockchainData}
+          // loadWeb3={this.loadWeb3}
+          clickMe={this.loadBlockchainData}
         />
         { this.state.loading 
         ?

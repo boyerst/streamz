@@ -1,13 +1,13 @@
 import React from 'react'
 import './App.css'
-import { useWallet, UseWalletProvider } from 'use-wallet'
+import { useWallet } from 'use-wallet'
 import Web3 from 'web3'
 import { Button, ButtonToolbar, Navbar } from 'react-bootstrap';
 import { ReactComponent as Wallet } from '../wallet.svg'
 
 
 
-function Nav() {
+function Nav(props) {
 
   const wallet = useWallet()
   const web3 = new Web3(Web3.currentProvider)
@@ -19,7 +19,10 @@ function Nav() {
     await wallet.connect()  
   }
 
-
+  const clickMe = (event) => {
+    props.clickMe()
+    console.log("CLICKED")
+  }
 
   return (  
     <Navbar className= "navbar-dark p-0 shadow text-monospace">
@@ -39,9 +42,12 @@ function Nav() {
           <Button className="btn-sm" variant="outline-light" onClick={() => wallet.reset()}> 
             Disconnect 
           </Button>
+          <Button onClick={clickMe}>
+            Click Me
+          </Button>
         </ButtonToolbar> 
       ):(
-        <Button className="ms-auto me-3" size="sm" variant="outline-light" onClick={(e)=> {connectWallet; this.props.loadBlockchainData()}}>
+        <Button className="ms-auto me-3" size="sm" variant="outline-light" onClick={connectWallet}>
           Connect Wallet
         </Button>  
       )}
@@ -52,12 +58,4 @@ function Nav() {
 
 
 
-export default () => (
-  <UseWalletProvider
-    chainId={1337}
-    connectors={{
-      provided: { provider: window.cleanEthereum },
-  }}>
-    <Nav />   
-  </UseWalletProvider>
-)
+export default Nav
