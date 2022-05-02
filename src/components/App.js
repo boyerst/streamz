@@ -34,15 +34,13 @@ class App extends Component {
     }
   }
 
+
   loadBlockchainData = async () => {
     const web3 = window.web3
 
     const accounts = await web3.eth.getAccounts()
     console.log("Account #1:", accounts[0])
     this.setState({ account: accounts[0] })
-    console.log("Account #1 connected")
-
-
     const networkId = await web3.eth.net.getId()
     const networkData = Streamz.networks[networkId]
     if(networkData) {
@@ -62,7 +60,6 @@ class App extends Component {
         currentTitle: latest.title
       })
       this.setState ({ loading: false})
-
     } else {
       window.alert("Incorrect Network Detected - Please Change.")
     }
@@ -81,7 +78,6 @@ class App extends Component {
     }
   }
 
-
   uploadVideo = async (title) => {
     console.log("Uploading Video to IPFS...")
     // console.log(ipfs)
@@ -96,8 +92,9 @@ class App extends Component {
   }
   
   changeVideo = (hash, title) => {
-    this.setState({'currentHash': hash});
-    this.setState({'currentTitle': title});
+    this.setState({
+      'currentHash': hash,
+      'currentTitle': title});
   }
 
   disconnectWallet = async () => {
@@ -120,8 +117,6 @@ class App extends Component {
       currentTitle: null,
     }
   }
-
-
 
 
   render() {

@@ -7,11 +7,11 @@ import { ReactComponent as Wallet } from '../wallet.svg'
 
 
 
+
 function Nav(props) {
 
   const wallet = useWallet()
   const web3 = new Web3(Web3.currentProvider)
-
 
 
   const connectWallet = async (e) => {
@@ -22,9 +22,10 @@ function Nav(props) {
 
 
   const disconnectWallet = async () => {
-    await wallet.reset()
+    await wallet.reset(wallet.account)
     await props.disconnectWallet()  
   }
+
 
   return (  
     <Navbar className= "navbar-dark p-0 shadow text-monospace">
@@ -41,13 +42,9 @@ function Nav(props) {
             &nbsp;|&nbsp;
             {web3.utils.fromWei(wallet.balance, 'ether')} ETH
           </Button>
-{/*          <Button className="btn-sm" variant="outline-light" onClick={() => wallet.reset()}> 
-            Disconnect 
-          </Button>*/}
           <Button className="btn-sm" variant="outline-light" onClick={disconnectWallet}> 
             Disconnect 
           </Button>
-
         </ButtonToolbar> 
       ):(
         <Button className="ms-auto me-3" size="sm" variant="outline-light" onClick={connectWallet}>
