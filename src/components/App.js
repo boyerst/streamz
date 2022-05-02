@@ -16,9 +16,9 @@ class App extends Component {
 
 
   async componentWillMount() {
-
     await this.loadWeb3()
     await this.loadBlockchainData()
+
   }
 
 
@@ -43,6 +43,8 @@ class App extends Component {
     console.log("Account #1:", accounts[0])
     this.setState({ account: accounts[0] })
     console.log("Account #1 connected")
+
+
     const networkId = await web3.eth.net.getId()
     const networkData = Streamz.networks[networkId]
     if(networkData) {
@@ -67,6 +69,8 @@ class App extends Component {
       window.alert("Incorrect Network Detected - Please Change.")
     }
   }
+
+
 
   captureFile = event => {
     event.preventDefault()
@@ -109,9 +113,7 @@ class App extends Component {
       loading: true,
       currentHash: null, 
       currentTitle: null,
-      card: 'Card'
     }
-
   }
 
 
@@ -120,11 +122,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Nav 
-        // loadWeb3={this.loadWeb3}
-        // loadBlockchainData={this.loadBlockchainData}
-  
-        />
+        <Nav />
         { this.state.loading 
         ?
         <div id="loader" className="text-center mt-5"><p>Loading...</p></div>

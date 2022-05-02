@@ -7,18 +7,16 @@ import { ReactComponent as Wallet } from '../wallet.svg'
 
 
 
+
 function Nav() {
 
   const wallet = useWallet()
   const web3 = new Web3(Web3.currentProvider)
 
 
-
   const connectWallet = async (e) => {
     e.preventDefault()
-    await wallet.connect()    
-    console.log(wallet)
-    console.log(wallet.networkName)
+    await wallet.connect()  
   }
 
 
@@ -28,7 +26,6 @@ function Nav() {
       <Navbar.Brand href="#!">
         Streamz 
       </Navbar.Brand> 
-
       { wallet.status === 'connected' ? (
         <ButtonToolbar className="ms-auto me-3">
           <Button className="btn-sm me-2" variant="outline-light">
@@ -43,10 +40,9 @@ function Nav() {
         </ButtonToolbar> 
       ):(
         <Button className="ms-auto me-3" size="sm" variant="outline-light" onClick={connectWallet}>
-          Connect Wallet 
+          Connect Wallet
         </Button>  
       )}
-
     </Navbar>
   )
 }
