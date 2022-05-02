@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { useWallet, UseWalletProvider } from 'use-wallet'
+import { useWallet } from 'use-wallet'
 import Web3 from 'web3'
 import { Button, ButtonToolbar, Navbar } from 'react-bootstrap';
 import { ReactComponent as Wallet } from '../wallet.svg'
@@ -8,7 +8,8 @@ import { ReactComponent as Wallet } from '../wallet.svg'
 
 
 
-function Nav() {
+function Nav(props) {
+
 
   const wallet = useWallet()
   const web3 = new Web3(Web3.currentProvider)
@@ -16,7 +17,15 @@ function Nav() {
 
   const connectWallet = async (e) => {
     e.preventDefault()
-    await wallet.connect()  
+    await wallet.connect()
+    await props.loadBlockchainData()  
+  }
+
+
+  const disconnectWallet = async () => {
+    await wallet.reset(wallet.account)
+    await props.disconnectWallet()  
+
   }
 
 
@@ -34,7 +43,7 @@ function Nav() {
             &nbsp;|&nbsp;
             {web3.utils.fromWei(wallet.balance, 'ether')} ETH
           </Button>
-          <Button className="btn-sm" variant="outline-light" onClick={() => wallet.reset()}> 
+          <Button className="btn-sm" variant="outline-light" onClick={disconnectWallet}> 
             Disconnect 
           </Button>
         </ButtonToolbar> 
@@ -49,12 +58,4 @@ function Nav() {
 
 
 
-export default () => (
-  <UseWalletProvider
-    chainId={1337}
-    connectors={{
-      provided: { provider: window.cleanEthereum },
-  }}>
-    <Nav />   
-  </UseWalletProvider>
-)
+export default Nav

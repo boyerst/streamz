@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
+import UseWalletProvider from './Nav'
 import Main from './Main'
 import Web3 from 'web3'
 import './App.css'
@@ -15,10 +16,10 @@ class App extends Component {
 
 
 
+
   async componentWillMount() {
     await this.loadWeb3()
-    await this.loadBlockchainData()
-
+    // await this.loadBlockchainData()
   }
 
 
@@ -36,15 +37,12 @@ class App extends Component {
   }
 
 
-  async loadBlockchainData() {
+  loadBlockchainData = async () => {
     const web3 = window.web3
 
     const accounts = await web3.eth.getAccounts()
     console.log("Account #1:", accounts[0])
     this.setState({ account: accounts[0] })
-    console.log("Account #1 connected")
-
-
     const networkId = await web3.eth.net.getId()
     const networkData = Streamz.networks[networkId]
     if(networkData) {
@@ -64,7 +62,6 @@ class App extends Component {
         currentTitle: latest.title
       })
       this.setState ({ loading: false})
-
     } else {
       window.alert("Incorrect Network Detected - Please Change.")
     }
@@ -83,7 +80,6 @@ class App extends Component {
     }
   }
 
-
   uploadVideo = async (title) => {
     console.log("Uploading Video to IPFS...")
     // console.log(ipfs)
@@ -98,10 +94,18 @@ class App extends Component {
   }
   
   changeVideo = (hash, title) => {
-    this.setState({'currentHash': hash});
-    this.setState({'currentTitle': title});
+    this.setState({
+      'currentHash': hash,
+      'currentTitle': title});
   }
 
+  disconnectWallet = async () => {
+    this.setState({
+      videos: [],
+      currentHash: null, 
+      currentTitle: null
+    }) 
+  }
 
   constructor(props) {
     super(props)
@@ -117,12 +121,14 @@ class App extends Component {
   }
 
 
-
-
   render() {
     return (
       <div>
-        <Nav />
+        <Nav 
+          loadBlockchainData={this.loadBlockchainData}
+          disconnectWallet={this.disconnectWallet}
+        />
+
         { this.state.loading 
         ?
         <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
