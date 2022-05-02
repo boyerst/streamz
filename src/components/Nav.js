@@ -16,12 +16,13 @@ function Nav(props) {
 
   const connectWallet = async (e) => {
     e.preventDefault()
-    await wallet.connect()  
+    await wallet.connect()
+    await props.loadBlockchainData()  
   }
 
-  const clickMe = (event) => {
-    props.clickMe()
-    console.log("CLICKED")
+
+  const disconnect = async () => {
+    await props.disconnect()  
   }
 
   return (  
@@ -39,12 +40,13 @@ function Nav(props) {
             &nbsp;|&nbsp;
             {web3.utils.fromWei(wallet.balance, 'ether')} ETH
           </Button>
-          <Button className="btn-sm" variant="outline-light" onClick={() => wallet.reset()}> 
+{/*          <Button className="btn-sm" variant="outline-light" onClick={() => wallet.reset()}> 
+            Disconnect 
+          </Button>*/}
+          <Button className="btn-sm" variant="outline-light" onClick={disconnect}> 
             Disconnect 
           </Button>
-          <Button onClick={clickMe}>
-            Click Me
-          </Button>
+
         </ButtonToolbar> 
       ):(
         <Button className="ms-auto me-3" size="sm" variant="outline-light" onClick={connectWallet}>
