@@ -21,8 +21,9 @@ function Nav(props) {
   }
 
 
-  const disconnect = async () => {
-    await props.disconnect()  
+  const disconnectWallet = async () => {
+    await wallet.reset()
+    await props.disconnectWallet()  
   }
 
   return (  
@@ -43,7 +44,7 @@ function Nav(props) {
 {/*          <Button className="btn-sm" variant="outline-light" onClick={() => wallet.reset()}> 
             Disconnect 
           </Button>*/}
-          <Button className="btn-sm" variant="outline-light" onClick={disconnect}> 
+          <Button className="btn-sm" variant="outline-light" onClick={disconnectWallet}> 
             Disconnect 
           </Button>
 

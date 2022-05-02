@@ -68,13 +68,6 @@ class App extends Component {
     }
   }
 
-  disconnect = async () => {
-    this.setState({
-      videos: [],
-      currentHash: null, 
-      currentTitle: null
-    }) 
-  }
 
 
   captureFile = event => {
@@ -107,6 +100,13 @@ class App extends Component {
     this.setState({'currentTitle': title});
   }
 
+  disconnectWallet = async () => {
+    this.setState({
+      videos: [],
+      currentHash: null, 
+      currentTitle: null
+    }) 
+  }
 
   constructor(props) {
     super(props)
@@ -130,7 +130,7 @@ class App extends Component {
         <Nav 
           // loadWeb3={this.loadWeb3}
           loadBlockchainData={this.loadBlockchainData}
-          disconnect={this.disconnect}
+          disconnectWallet={this.disconnectWallet}
         />
         { this.state.loading 
         ?
