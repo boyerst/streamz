@@ -26,7 +26,7 @@ function Nav() {
     <Navbar className= "navbar-dark p-1 shadow text-monospace">
 
       <Navbar.Brand href="#!">
-        Streamz
+        Streamz 
       </Navbar.Brand> 
 
       { wallet.status === 'connected' ? (
@@ -43,7 +43,7 @@ function Nav() {
         </ButtonToolbar> 
       ):(
         <Button className="ms-auto me-3" size="sm" variant="outline-light" onClick={connectWallet}>
-          Connect Wallet
+          Connect Wallet 
         </Button>  
       )}
 

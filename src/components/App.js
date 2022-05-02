@@ -14,6 +14,7 @@ const ipfs = create({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
 class App extends Component {
 
 
+
   async componentWillMount() {
 
     await this.loadWeb3()
@@ -108,7 +109,9 @@ class App extends Component {
       loading: true,
       currentHash: null, 
       currentTitle: null,
+      card: 'Card'
     }
+
   }
 
 
@@ -120,6 +123,7 @@ class App extends Component {
         <Nav 
         // loadWeb3={this.loadWeb3}
         // loadBlockchainData={this.loadBlockchainData}
+  
         />
         { this.state.loading 
         ?
