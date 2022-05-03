@@ -17,28 +17,35 @@ class App extends Component {
 
 
 
-  async componentWillMount() {
-    await this.loadWeb3()
-    // await this.loadBlockchainData()
-  }
+  // async componentWillMount() {
+  //   await this.loadWeb3()
+  //   await this.loadBlockchainData()
+  // }
 
 
-  async loadWeb3() {
-    if (window.ethereum) {
-      window.web3 = new Web3(window.ethereum)
-      await window.ethereum.request({ method: 'eth_requestAccounts' });
-    }
-    else if (window.web3) {
-      window.web3 = new Web3(window.web3.currentProvider)
-    }
-    else {
-      window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!')
-    }
-  }
+  // async loadWeb3() {
+  //   if (window.ethereum) {
+  //     window.web3 = new Web3(window.ethereum)
+  //     await window.ethereum.request({ method: 'eth_requestAccounts' });
+  //   }
+  //   else if (window.web3) {
+  //     window.web3 = new Web3(window.web3.currentProvider)
+  //   }
+  //   else {
+  //     window.alert('Non-Ethereum browser detected. Please download MetaMask to access this DApp.')
+  //   }
+  // }
 
 
   loadBlockchainData = async () => {
-    const web3 = window.web3
+    // window.web3 = new Web3(window.ethereum)
+    // console.log(window.web3)
+    
+    const web3 = new Web3(window.ethereum)
+    console.log(window.web3)
+    // const web3 = window.web3
+    // console.log(web3)
+
 
     const accounts = await web3.eth.getAccounts()
     console.log("Account #1:", accounts[0])
@@ -128,7 +135,6 @@ class App extends Component {
           loadBlockchainData={this.loadBlockchainData}
           disconnectWallet={this.disconnectWallet}
         />
-
         { this.state.loading 
         ?
         <div id="loader" className="text-center mt-5"><p>Loading...</p></div>

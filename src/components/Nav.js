@@ -22,7 +22,8 @@ function Nav(props) {
   }
 
 
-  const disconnectWallet = async () => {
+  const disconnectWallet = async (e) => {
+    e.preventDefault()
     await wallet.reset(wallet.account)
     await props.disconnectWallet()  
 
