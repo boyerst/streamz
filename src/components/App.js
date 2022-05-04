@@ -17,30 +17,25 @@ class App extends Component {
 
 
 
-  // async componentWillMount() {
-  //   await this.loadWeb3()
-  //   await this.loadBlockchainData()
-  // }
+  async componentWillMount() {
+    await this.checkWeb3()
+  }
 
 
-  // async loadWeb3() {
-  //   if (window.ethereum) {
-  //     window.web3 = new Web3(window.ethereum)
-  //     await window.ethereum.request({ method: 'eth_requestAccounts' });
-  //   }
-  //   else if (window.web3) {
-  //     window.web3 = new Web3(window.web3.currentProvider)
-  //   }
-  //   else {
-  //     window.alert('Non-Ethereum browser detected. Please download MetaMask to access this DApp.')
-  //   }
-  // }
+
+  async checkWeb3() {
+    if (!window.ethereum) {
+      window.alert('Non-Ethereum browser detected. Please download MetaMask to access this DApp.')
+    } else if (!window.web3) {
+      window.alert('Non-Ethereum browser detected. Please download MetaMask to access this DApp.')
+    }
+  }
 
 
   loadBlockchainData = async () => {
     // window.web3 = new Web3(window.ethereum)
     // console.log(window.web3)
-    
+
     const web3 = new Web3(window.ethereum)
     console.log(window.web3)
     // const web3 = window.web3
