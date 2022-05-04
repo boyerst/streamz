@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import Nav from './Nav'
 import UseWalletProvider from './Nav'
 import Main from './Main'
+import NoWeb3NotificationModal from './Modal'
 import Web3 from 'web3'
 import './App.css'
 import Streamz from '../abis/Streamz.json'
 import { create } from 'ipfs-http-client'
+
 
 
 
@@ -17,18 +19,12 @@ class App extends Component {
 
 
 
-  async componentWillMount() {
-    await this.checkWeb3()
+  showModal = async () => {
+    this.setState({ show: true })
   }
 
-
-
-  async checkWeb3() {
-    if (!window.ethereum) {
-      window.alert('Non-Ethereum browser detected. Please download MetaMask to access this DApp.')
-    } else if (!window.web3) {
-      window.alert('Non-Ethereum browser detected. Please download MetaMask to access this DApp.')
-    }
+  hideModal = () => {
+    this.setState({ show: false });
   }
 
 
@@ -112,7 +108,9 @@ class App extends Component {
       loading: true,
       currentHash: null, 
       currentTitle: null,
+      show: true
     }
+
   }
 
 
@@ -123,7 +121,13 @@ class App extends Component {
           loadBlockchainData={this.loadBlockchainData}
           disconnectWallet={this.disconnectWallet}
         />
-        { this.state.loading 
+        
+        {
+        !window.ethereum
+        ?
+        <NoWeb3NotificationModal show={this.state.show} hideModal={this.hideModal}/>
+        :
+         this.state.loading 
         ?
         <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
         :
@@ -135,6 +139,7 @@ class App extends Component {
           currentHash={this.state.currentHash} 
           changeVideo={this.changeVideo} />
         }
+
       </div>
     );
   }
