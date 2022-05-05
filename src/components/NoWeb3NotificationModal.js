@@ -1,7 +1,7 @@
 import React from 'react'
-import './App.css'
 import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal'
+import './App.css'
 
 
 function NoWeb3NotificationModal (props) {
@@ -9,23 +9,24 @@ function NoWeb3NotificationModal (props) {
   return (
     <Modal
       {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
+      size="md"
+      // aria-labelledby="contained-modal-title-vcenter"
       centered
+      // dialogClassName="modal-90w"
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Alert!
+          Oh No!
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <h4>You are not using an ethereum browser</h4>
         <p>
-          lorem ipsum.........
+          <a href="https://www.metamask.io">MetaMask</a>
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.hideModal}>Close</Button>
+        <Button variant="flat" style={{background: "#6E31E0", color: "white"}} onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -36,3 +37,4 @@ function NoWeb3NotificationModal (props) {
 
 
 export default NoWeb3NotificationModal
+

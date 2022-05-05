@@ -14,12 +14,22 @@ function Nav(props) {
   const wallet = useWallet()
   const web3 = new Web3(Web3.currentProvider)
 
-
   const connectWallet = async (e) => {
     e.preventDefault()
     await wallet.connect()
     await props.loadBlockchainData()  
+    
   }
+
+  // const connectWallet = async (e) => {
+  //   e.preventDefault()
+  //   if (!window.ethereum) {
+  //     this.setState({ show: true })
+  //   } else {
+  //     await wallet.connect()
+  //     await props.loadBlockchainData()  
+  //   }
+  // }
 
 
   const disconnectWallet = async (e) => {

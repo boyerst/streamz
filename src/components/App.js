@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Nav from './Nav'
 import UseWalletProvider from './Nav'
 import Main from './Main'
-import NoWeb3NotificationModal from './Modal'
+import NoWeb3NotificationModal from './NoWeb3NotificationModal.js'
 import Web3 from 'web3'
 import './App.css'
 import Streamz from '../abis/Streamz.json'
@@ -23,7 +23,7 @@ class App extends Component {
     this.setState({ show: true })
   }
 
-  hideModal = () => {
+  onHide = () => {
     this.setState({ show: false });
   }
 
@@ -120,12 +120,13 @@ class App extends Component {
         <Nav 
           loadBlockchainData={this.loadBlockchainData}
           disconnectWallet={this.disconnectWallet}
+          show={this.state.show} onHide={this.onHide}
         />
         
         {
         !window.ethereum
         ?
-        <NoWeb3NotificationModal show={this.state.show} hideModal={this.hideModal}/>
+        <NoWeb3NotificationModal show={this.state.show} onHide={this.onHide}/>
         :
          this.state.loading 
         ?
@@ -137,7 +138,8 @@ class App extends Component {
           uploadVideo={this.uploadVideo} 
           currentTitle={this.state.currentTitle} 
           currentHash={this.state.currentHash} 
-          changeVideo={this.changeVideo} />
+          changeVideo={this.changeVideo} 
+          />
         }
 
       </div>
