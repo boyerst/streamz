@@ -31,7 +31,6 @@ function NoWeb3NotificationModal (props) {
           <a href="https://www.metamask.io" style={{color: "white", textDecoration: "none" }}>
           Download MetaMask
           </a>
-
         </Button>
       </Modal.Footer>
     </Modal>
