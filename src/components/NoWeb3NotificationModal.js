@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal'
 import './App.css'
+import logo from '../Metamask.png'
 
 
 function NoWeb3NotificationModal (props) {
@@ -22,11 +23,16 @@ function NoWeb3NotificationModal (props) {
       <Modal.Body>
         <h4>You are not using an ethereum browser</h4>
         <p>
-          <a href="https://www.metamask.io">MetaMask</a>
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="flat" style={{background: "#6E31E0", color: "white"}} onClick={props.onHide}>Close</Button>
+        <Button variant="flat" style={{background: "#6E31E0", color: "white" }} onClick={props.onHide}>
+          <img src={logo} className="me-2 ms-0" width="25" height="25" alt="" />
+          <a href="https://www.metamask.io" style={{color: "white", textDecoration: "none" }}>
+          Download MetaMask
+          </a>
+
+        </Button>
       </Modal.Footer>
     </Modal>
   );
