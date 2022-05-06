@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal'
 import './App.css'
 import logo from '../Metamask.png'
@@ -17,16 +17,14 @@ function NoWeb3NotificationModal (props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Oh No!
+          <small>Oh no! You are not using an Ethereum browser</small>
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <h4>You are not using an ethereum browser</h4>
-        <p>
-        </p>
+      <Modal.Body className="mx-auto">
+        <h6>Please connect to the blockchain</h6>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="flat" style={{background: "#6E31E0", color: "white" }} onClick={props.onHide}>
+        <Button variant="flat" className="mx-auto" style={{background: "#6E31E0", color: "white" }} onClick={props.onHide}>
           <img src={logo} className="me-2 ms-0" width="25" height="25" alt="" />
           <a href="https://www.metamask.io" style={{color: "white", textDecoration: "none" }}>
           Download MetaMask
