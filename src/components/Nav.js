@@ -14,11 +14,23 @@ function Nav(props) {
   const wallet = useWallet()
   const web3 = new Web3(Web3.currentProvider)
 
-  const connectWallet = async (e) => {
+  // const connectWallet = async (e) => {
+  //   e.preventDefault()
+  //   console.log("Connect button")
+  //   await wallet.connect()
+  //   await props.loadBlockchainData()  
+  // }
+
+    const connectWallet = async (e) => {
     e.preventDefault()
-    await wallet.connect()
-    await props.loadBlockchainData()  
-    
+    console.log("Connect button")
+    if (window.ethereum) {
+      await wallet.connect()
+      await props.loadBlockchainData()  
+    } else {
+      console.log("Route to modal")
+      props.showModal()
+    }
   }
 
   // const connectWallet = async (e) => {
