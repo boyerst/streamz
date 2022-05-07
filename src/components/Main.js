@@ -17,7 +17,7 @@ class Main extends Component {
               <video className="container-fluid modal-fullscreen-sm-down ms-4" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} style={{ maxWidth: '1200px' }} controls></video>
              {/* <video className="modal-dialog modal-fullscreen-lg-down" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} controls></video>*/}
             </div>
-            <h3 className="text-center"><b><i> {this.props.currentTitle} </i></b></h3>
+            <h3 className="ms-5"><b><i className="ms-5"> {this.props.currentTitle} </i></b></h3>
           </div>
 
           <div className="col-md-3 overflow-scroll text-center" style={{ maxHeight: '768px', minWidth: '175px'}}>
@@ -56,7 +56,7 @@ class Main extends Component {
             { this.props.videos.map((video, key) => {
               return (
                 <div className="card mb-3 text-center bg-light mx-auto" style={{ width: '250px' }} key={key} >
-                  <div className="card-title bg-dark">
+                  <div className="card-title bg-secondary">
                     <small className="text-white"><b>{video.title}</b></small>
                   </div>
                   <div className="mx-auto" style={{ width: '210px'}}>

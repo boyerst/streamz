@@ -21,7 +21,7 @@ function NoWeb3NotificationModal (props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="mx-auto">
-        <h6>Please connect to the blockchain</h6>
+        <h6>Click below to initialize blockchain connection...</h6>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="flat" className="mx-auto" style={{background: "#6E31E0", color: "white" }} onClick={props.onHide}>
