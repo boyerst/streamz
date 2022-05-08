@@ -53,6 +53,7 @@ class App extends Component {
       this.setState ({ loading: false})
     } else {
       window.alert("Incorrect Network Detected - Please Change.")
+
     }
   }
 

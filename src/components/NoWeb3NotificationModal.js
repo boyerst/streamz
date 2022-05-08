@@ -7,7 +7,9 @@ import logo from '../Metamask.png'
 
 function NoWeb3NotificationModal (props) {
 
+
   return (
+
     <Modal
       {...props}
       size="md"

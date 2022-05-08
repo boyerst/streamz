@@ -17,6 +17,12 @@
   margin-right: 8px;
 }
 
+div img .icon {
+  fill: red;
+  color:  pink;
+  margin-right: 10;
+}
+
 
 nav a {
   text-decoration: none;
