@@ -20,7 +20,9 @@ class Main extends Component {
             <div>
               <h3 className="ms-5">
                 <b><i className="ms-5"> {this.props.currentTitle} </i></b>
-                <img className="ms-auto" width="20" height="20" src={share} alt=""></img>
+                <a href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`}>
+                  <img className="ms-auto" width="20" height="20" src={share} alt=""></img>
+                </a>
               </h3>
             </div>
           </div>
