@@ -6,6 +6,7 @@ import NoWeb3NotificationModal from './NoWeb3NotificationModal.js'
 import Web3 from 'web3'
 import './App.css'
 import Streamz from '../abis/Streamz.json'
+import Spinner from 'react-bootstrap/Spinner';
 import { create } from 'ipfs-http-client'
 
 
@@ -131,7 +132,11 @@ class App extends Component {
         :
          this.state.loading 
         ?
-        <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
+        <div className="loader text-center mt-5">
+          <Spinner className="mt-5" animation="grow" variant="info" size="lg" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
         :
         <Main 
           videos={this.state.videos}
