@@ -16,13 +16,11 @@ class Main extends Component {
             <div className="center-text ms-5">
               <video className="container-fluid modal-fullscreen-sm-down ms-4" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} style={{ maxWidth: '1200px' }} controls></video>
              {/* <video className="modal-dialog modal-fullscreen-lg-down" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} controls></video>*/}
-            </div>
-            <div>
               <h3 className="ms-5">
-                <b><i className="ms-5"> {this.props.currentTitle} </i></b>
                 <a href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`}>
-                  <img className="ms-auto" width="20" height="20" src={share} alt=""></img>
+                  <img className="image" width="20" height="20" src={share} alt=""></img>
                 </a>
+                <b><i className="ms-1"> {this.props.currentTitle} </i></b>
               </h3>
             </div>
           </div>
