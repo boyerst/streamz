@@ -26,10 +26,10 @@ class Main extends Component {
           </div>
 
           <div className="col-md-3 overflow-scroll text-center" style={{ maxHeight: '768px', minWidth: '175px'}}>
-            <h5 className="mb-4">
+    {/*        <h5 className="mb-4">
               <img src={share} alt=""></img>
-              <b> Share Video </b>
-            </h5>
+              <b> Upload Video </b>
+            </h5>*/}
             <form onSubmit={(event) => {
               event.preventDefault()
               const title = this.videoTitle.value
@@ -54,7 +54,7 @@ class Main extends Component {
               </div>
               &nbsp;
               <div className="d-grid col-7 mx-auto">
-                <button type="submit" className="mb-5 btn btn-danger btn-sm">Upload!</button>
+                <button type="submit" className="mb-5 btn btn-danger btn-sm">Upload Video</button>
               </div>
             </form>
 
