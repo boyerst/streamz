@@ -137,7 +137,7 @@ class App extends Component {
 {/*          <Spinner className="mt-5" animation="grow" variant="info" style={{ width: '250px', height: '250px' }} role="status">
             <span className="visually-hidden">Loading...</span>
           </Spinner>*/}
-          <HashLoader className="align-items-center" color="#6E31E0" size="150"/>
+          <HashLoader className="align-items-center" color="#6E31E0" size="150" speedMultiplier={.33}/>
         </div>
         :
         <Main 
