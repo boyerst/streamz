@@ -134,10 +134,7 @@ class App extends Component {
          this.state.loading 
         ?
         <div className="loader d-flex align-items-center justify-content-center" style={{ height: "650px"}} >
-{/*          <Spinner className="mt-5" animation="grow" variant="info" style={{ width: '250px', height: '250px' }} role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>*/}
-          <RiseLoader className="align-items-center" color="#6E31E0" size="150" speedMultiplier={.33}/>
+          <RiseLoader className="align-items-center" color="#6E31E0" size="120" speedMultiplier={.33}/>
         </div>
         :
         <Main 

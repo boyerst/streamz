@@ -48,6 +48,7 @@ function Nav(props) {
     e.preventDefault()
     await wallet.reset(wallet.account)
     await props.disconnectWallet()  
+    
 
   }
 
@@ -66,7 +67,7 @@ function Nav(props) {
             &nbsp;|&nbsp;
             {web3.utils.fromWei(wallet.balance, 'ether')} ETH
           </Button>
-          <Button className="btn-sm pb-.25" variant="outline-light" style={{fontSize: 'smaller'}}onClick={disconnectWallet}> 
+          <Button className="btn-sm pb-.25" variant="outline-light" style={{fontSize: 'smaller'}} onClick={disconnectWallet}> 
             Disconnect 
           </Button>
         </ButtonToolbar> 
