@@ -7,7 +7,7 @@ import Web3 from 'web3'
 import './App.css'
 import Streamz from '../abis/Streamz.json'
 // import Spinner from 'react-bootstrap/Spinner';
-import HashLoader from "react-spinners/HashLoader";
+import RiseLoader from "react-spinners/RiseLoader";
 import { create } from 'ipfs-http-client'
 
 
@@ -133,11 +133,11 @@ class App extends Component {
         :
          this.state.loading 
         ?
-        <div className="loader d-flex align-items-center justify-content-center" style={{ height: "500px"}} >
+        <div className="loader d-flex align-items-center justify-content-center" style={{ height: "650px"}} >
 {/*          <Spinner className="mt-5" animation="grow" variant="info" style={{ width: '250px', height: '250px' }} role="status">
             <span className="visually-hidden">Loading...</span>
           </Spinner>*/}
-          <HashLoader className="align-items-center" color="#6E31E0" size="150" speedMultiplier={.33}/>
+          <RiseLoader className="align-items-center" color="#6E31E0" size="150" speedMultiplier={.33}/>
         </div>
         :
         <Main 
