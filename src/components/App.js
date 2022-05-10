@@ -133,7 +133,7 @@ class App extends Component {
          this.state.loading 
         ?
         <div className="loader text-center mt-5">
-          <Spinner className="mt-5" animation="grow" variant="info" size="lg" role="status">
+          <Spinner className="mt-5" animation="grow" variant="info" style={{ width: '250px', height: '250px' }} role="status">
             <span className="visually-hidden">Loading...</span>
           </Spinner>
         </div>
