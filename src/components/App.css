@@ -1,5 +1,6 @@
 
 /*Main*/
+
 .image {
   margin-right: 3px;
   background-color:  pink;
@@ -20,9 +21,12 @@ scrollbar-width: none; /* Firefox */
 
 /*Nav*/
 
-
 fill :hover {
   fill: black;
+}
+
+.btn-sm svg {
+  fill: white;
 }
 
 .btn-sm:hover svg {
@@ -34,10 +38,12 @@ fill :hover {
 }
 
 .disconnect.btn-sm {
-  background-color: red;
   font-size: 12px;
 }
 
+.connect.btn-sm {
+  font-size: 12px;
+}
 
 .navbar {
   background-color: #6E31E0;
@@ -56,11 +62,8 @@ fill :hover {
 
 
 
-
-
-
-
 /*NoWeb3NotificationModal*/
+
 .modal {
   font-family:  "Monaco";
 }
@@ -73,3 +76,20 @@ fill :hover {
 .mx-auto.modal-button {
   background-color: #6E31E0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

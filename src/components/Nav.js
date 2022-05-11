@@ -62,7 +62,7 @@ function Nav(props) {
       { wallet.status === 'connected' ? (
         <ButtonToolbar className="ms-auto me-3">
           <Button className="wallet btn-sm me-2 pb-0" variant="outline-light">
-            <Wallet className="pe-2 pb-1" width="25" height="25" fill="white" />
+            <Wallet className="pe-2 pb-1" width="25" height="25"/>
             <a>{wallet.account ? wallet.account.substring(0,6) : '0x0'}...{wallet.account ? wallet.account.substring(38,42) : ''}</a>
             &nbsp;|&nbsp;
             {web3.utils.fromWei(wallet.balance, 'ether')} ETH
@@ -72,7 +72,7 @@ function Nav(props) {
           </Button>
         </ButtonToolbar> 
       ):(
-        <Button className="btn-sm ms-auto me-3" variant="outline-light" style={{fontSize: 'smaller'}} onClick={connectWallet}>
+        <Button className="connect btn-sm ms-auto me-3" variant="outline-light" onClick={connectWallet}>
           Connect Wallet
         </Button>  
       )}

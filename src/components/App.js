@@ -133,8 +133,8 @@ class App extends Component {
         :
          this.state.loading 
         ?
-        <div className="loader d-flex align-items-center justify-content-center" style={{ height: "650px"}} >
-          <RiseLoader className="align-items-center" color="#6E31E0" size="120" opacity="0.5" speedMultiplier={.33}/>
+        <div className="d-flex align-items-center justify-content-center" style={{ height: "650px"}} >
+          <RiseLoader className="loader-icon align-items-center" size="120"  color="#6E31E0" css={{ opacity:"0.5" }} speedMultiplier={.33}/>
         </div>
         :
         <Main 
