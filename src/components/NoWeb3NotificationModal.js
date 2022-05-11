@@ -28,7 +28,7 @@ function NoWeb3NotificationModal (props) {
       <Modal.Footer>
         <Button variant="flat" className="mx-auto" style={{background: "#6E31E0", color: "white" }} onClick={props.onHide}>
           <img src={logo} className="me-2 ms-0" width="25" height="25" alt="" />
-          <a href="https://www.metamask.io" rel="noopener noreferrer" target="_blank" style={{color: "white", textDecoration: "none" }}>
+          <a href="https://www.metamask.io" rel="noopener noreferrer" target="_blank" className="metamask" >
           Download MetaMask
           </a>
         </Button>
