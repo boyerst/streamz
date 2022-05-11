@@ -19,7 +19,7 @@ function NoWeb3NotificationModal (props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          <small>Oh no! You are not using an Ethereum browser</small>
+          <small>Oh no! You are not using an web3 capable browser</small>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="mx-auto">

@@ -12,17 +12,40 @@ class Main extends Component {
         <br></br>
 
         <div className="col-12 row">
+
           <div className="col-md-9">
+
             <div className="center-text ms-5">
               <video className="container-fluid modal-fullscreen-sm-down ms-4" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} style={{ maxWidth: '1200px' }} controls></video>
              {/* <video className="modal-dialog modal-fullscreen-lg-down" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} controls></video>*/}
-              <h3 className="ms-5">
+              
+{/*              <h3 className="col-md-3 ms-5">
+                <b><i className="ms-1"> {this.props.currentTitle} </i></b>
                 <a href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`}>
                   <img className="image" width="20" height="20" src={share} alt=""></img>
                 </a>
-                <b><i className="ms-1"> {this.props.currentTitle} </i></b>
-              </h3>
+              </h3>*/}
+
+              <div className="col-12 row">
+                <h3 className="col-md-9 ms-5">
+                  <b><i className="ms-1"> {this.props.currentTitle} </i></b>
+                </h3> 
+                <h7 className="col-md-2 ms-4 pe-0">
+                  Share Video
+                  <a href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`}>
+                    <img className="image ms-2" width="20" height="20" src={share} alt=""></img>
+                  </a>
+                </h7>
+      {/*          <div className="col-md-1">
+                </div>*/}
+              </div>
+
+
+
+
             </div>
+
+
           </div>
 
           <div className="col-md-3 overflow-scroll text-center" style={{ maxHeight: '768px', minWidth: '175px'}}>

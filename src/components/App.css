@@ -1,9 +1,14 @@
 
+
+*{
+  font-family: "Monaco";
+}
+
+
 /*Main*/
 
 .image {
-  margin-right: 3px;
-  background-color:  pink;
+/*  margin-left: 831px;*/
 }
 
 ::-webkit-scrollbar { /* Chrome Safari */
@@ -66,6 +71,10 @@ fill :hover {
 
 .modal {
   font-family:  "Monaco";
+}
+
+.modal-title {
+  text-align: center;
 }
 
 .metamask {
