@@ -1,27 +1,4 @@
 
-
-/*Nav*/
-.btn-sm:hover svg {
-  fill: black;
-}
-
-.navbar {
-  background-color: #6E31E0;
-  font-family: "Monaco";
-}
-
-.navbar-brand {
-  margin-left: 15px;
-}
-
-.nav-link {
-  margin-right: 8px;
-}
-
-
-
-
-
 /*Main*/
 .image {
   margin-right: 3px;
@@ -41,6 +18,48 @@ scrollbar-width: none; /* Firefox */
 
 
 
+/*Nav*/
+
+
+fill :hover {
+  fill: black;
+}
+
+.btn-sm:hover svg {
+  fill: black;
+}
+
+.wallet.btn-sm.me-2.pb-0 {
+  font-size: 12px;
+}
+
+.disconnect.btn-sm {
+  background-color: red;
+  font-size: 12px;
+}
+
+
+.navbar {
+  background-color: #6E31E0;
+  font-family: "Monaco";
+}
+
+.navbar-brand {
+  margin-left: 15px;
+}
+
+.nav-link {
+  margin-right: 8px;
+}
+
+
+
+
+
+
+
+
+
 /*NoWeb3NotificationModal*/
 .modal {
   font-family:  "Monaco";
@@ -49,4 +68,8 @@ scrollbar-width: none; /* Firefox */
 .metamask {
   color:  white;
   text-decoration: none;
+}
+
+.mx-auto.modal-button {
+  background-color: #6E31E0;
 }
