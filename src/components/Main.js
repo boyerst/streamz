@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
-import share from '../share-fill.svg'
+import share from '../share-icon.png'
 
 
 class Main extends Component {
@@ -30,10 +30,12 @@ class Main extends Component {
                 <h3 className="col-md-9 ms-4">
                   <b><i className="ms-1"> {this.props.currentTitle} </i></b>
                 </h3> 
-                <h7 className="col-md-2 ms-auto">
-                  Share Video
+                <h7 className="col-md-2 ms-auto pt-2">
+                  <i>
+                    Share Video
+                  </i>
                   <a href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`}>
-                    <img className="image ms-3" width="20" height="20" src={share} alt=""></img>
+                    <img className="image ms-3" width="23" height="23" src={share} alt=""></img>
                   </a>
                 </h7>
        {/*          <div className="col-md-1">``
