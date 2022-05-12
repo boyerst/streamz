@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Nav from './Nav'
 import UseWalletProvider from './Nav'
 import Main from './Main'
+import Footer from './Footer'
 import NoWeb3NotificationModal from './NoWeb3NotificationModal.js'
 import Web3 from 'web3'
 import './App.css'
@@ -145,8 +146,9 @@ class App extends Component {
           currentHash={this.state.currentHash} 
           changeVideo={this.changeVideo} 
           />
+        
         }
-
+        <Footer />
       </div>
     );
   }
