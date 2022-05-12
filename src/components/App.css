@@ -50,7 +50,7 @@ fill :hover {
   font-size: 12px;
 }
 
-.navbar {
+.navbar-dark {
   background-color: #6E31E0;
   font-family: "Monaco";
 }
@@ -89,8 +89,18 @@ fill :hover {
 
 
 
+/*Footer*/
+
+.footer {
+  margin-top: 300px;
+  background-color: #6E31E0;
+}
 
 
+.footer-content.navbar-brand {
+  padding-top: 20px;
+  font-size: 10px;
+}
 
 
 

@@ -54,7 +54,7 @@ function Nav(props) {
 
 
   return (  
-    <Navbar className= "navbar-dark p-1 shadow text-monospace">
+    <Navbar className= "navbar-dark bg-gradient p-1 shadow-lg text-monospace">
 
       <Navbar.Brand href="#!">
         Streamz 

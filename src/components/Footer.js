@@ -6,13 +6,11 @@ import './App.css'
 class Footer extends Component {
   render() {
     return (
-      <div >
-        <Navbar>
- 
-            <Navbar.Brand>FOOTER</Navbar.Brand>
-
-        </Navbar>
-      </div>        
+      <Navbar className="shadow-lg navbar-dark footer bg-gradient">
+        <Navbar.Brand className="footer-content">
+          Created by &copy;Steve Boyer
+        </Navbar.Brand>
+      </Navbar>
     )
   }
 }

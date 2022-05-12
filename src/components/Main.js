@@ -77,7 +77,7 @@ class Main extends Component {
               </div>
               &nbsp;
               <div className="d-grid col-7 mx-auto">
-                <button type="submit" className="mb-5 btn btn-danger btn-sm">Upload Video</button>
+                <button type="submit" className="mb-5 btn btn-danger btn-sm hover-shadow">Upload Video</button>
               </div>
             </form>
 
