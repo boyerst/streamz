@@ -126,23 +126,22 @@ class App extends Component {
           onHide={this.onHide}
           showModal={this.showModal}
         />
-        
-        {
-        !window.ethereum
-        ?
-        <div>
-          <NoWeb3NotificationModal show={this.state.show} onHide={this.onHide}/>
-          <div className="d-flex align-items-center justify-content-center" style={{ height: "650px"}} >
-            <RiseLoader className="loader-icon align-items-center" size="120px"  color="#6E31E0" css={{ opacity:"0.5" }} speedMultiplier={.33}/>
+        { !window.ethereum 
+          && 
+          <div>
+            <NoWeb3NotificationModal show={this.state.show} onHide={this.onHide}/>
+            <div className="d-flex align-items-center justify-content-center" style={{ height: "650px"}} >
+              <RiseLoader className="loader-icon align-items-center" size="120px"  color="#6E31E0" css={{ opacity:"0.5" }} speedMultiplier={.33}/>
+            </div>
           </div>
-        </div>
-        :
-         this.state.loading 
-        ?
-        <div className="d-flex align-items-center justify-content-center" style={{ height: "650px"}} >
-          <RiseLoader className="loader-icon align-items-center" size="120"  color="#6E31E0" css={{ opacity:"0.5" }} speedMultiplier={.33}/>
-        </div>
-        :
+        }
+        
+        { this.state.loading 
+          ? 
+          <div className="d-flex align-items-center justify-content-center" style={{ height: "650px"}} >
+            <RiseLoader className="loader-icon align-items-center" size="120"  color="#6E31E0" css={{ opacity:"0.5" }} speedMultiplier={.33}/>
+          </div>
+          :
         <Main 
           videos={this.state.videos}
           captureFile={this.captureFile} 
@@ -151,8 +150,8 @@ class App extends Component {
           currentHash={this.state.currentHash} 
           changeVideo={this.changeVideo} 
           />
-
         }
+
         <Footer />
       </div>
     );
