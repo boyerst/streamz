@@ -128,30 +128,23 @@ class App extends Component {
         />
         { !window.ethereum 
           && 
-          <div>
-            <NoWeb3NotificationModal show={this.state.show} onHide={this.onHide}/>
-            <div className="d-flex align-items-center justify-content-center" style={{ height: "650px"}} >
-              <RiseLoader className="loader-icon align-items-center" size="120px"  color="#6E31E0" css={{ opacity:"0.5" }} speedMultiplier={.33}/>
-            </div>
-          </div>
+          <NoWeb3NotificationModal show={this.state.show} onHide={this.onHide}/>
         }
-        
         { this.state.loading 
           ? 
           <div className="d-flex align-items-center justify-content-center" style={{ height: "650px"}} >
             <RiseLoader className="loader-icon align-items-center" size="120"  color="#6E31E0" css={{ opacity:"0.5" }} speedMultiplier={.33}/>
           </div>
           :
-        <Main 
-          videos={this.state.videos}
-          captureFile={this.captureFile} 
-          uploadVideo={this.uploadVideo} 
-          currentTitle={this.state.currentTitle} 
-          currentHash={this.state.currentHash} 
-          changeVideo={this.changeVideo} 
+          <Main 
+            videos={this.state.videos}
+            captureFile={this.captureFile} 
+            uploadVideo={this.uploadVideo} 
+            currentTitle={this.state.currentTitle} 
+            currentHash={this.state.currentHash} 
+            changeVideo={this.changeVideo} 
           />
         }
-
         <Footer />
       </div>
     );
