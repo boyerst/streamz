@@ -8,7 +8,7 @@ class Footer extends Component {
     return (
       <Navbar className="shadow-lg navbar-dark footer bg-gradient">
         <Navbar.Brand className="footer-content">
-          Created by &copy;Steve Boyer
+          Created by &copy;Sopro
         </Navbar.Brand>
       </Navbar>
     )
