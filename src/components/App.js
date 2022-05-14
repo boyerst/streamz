@@ -20,12 +20,12 @@ const ipfs = create({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
 class App extends Component {
 
 
-  showModal = async () => {
-    this.setState({ show: true })
+  showNoWeb3Modal = async () => {
+    this.setState({ showModal1: true })
   }
 
-  onHide = () => {
-    this.setState({ show: false });
+  hideNoWeb3Modal = () => {
+    this.setState({ showModal1: false });
   }
 
 
@@ -110,9 +110,8 @@ class App extends Component {
       loading: true,
       currentHash: null, 
       currentTitle: null,
-      show: true
+      showModal1: true
     }
-
   }
 
 
@@ -122,11 +121,11 @@ class App extends Component {
         <Nav 
           loadBlockchainData={this.loadBlockchainData}
           disconnectWallet={this.disconnectWallet}
-          showModal={this.showModal}
+          showNoWeb3Modal={this.showNoWeb3Modal}
         />
         { !window.ethereum 
           && 
-          <NoWeb3NotificationModal show={this.state.show} onHide={this.onHide}/>
+          <NoWeb3NotificationModal show={this.state.showModal1} onHide={this.hideNoWeb3Modal}/>
         }
         { this.state.loading 
           ? 
