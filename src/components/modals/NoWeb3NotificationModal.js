@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal'
-import './App.css'
-import logo from '../Metamask.png'
+import '../App.css'
+import logo from '../../Metamask.png'
 
 
 function NoWeb3NotificationModal (props) {
