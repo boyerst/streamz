@@ -122,8 +122,6 @@ class App extends Component {
         <Nav 
           loadBlockchainData={this.loadBlockchainData}
           disconnectWallet={this.disconnectWallet}
-          show={this.state.show} 
-          onHide={this.onHide}
           showModal={this.showModal}
         />
         { !window.ethereum 
