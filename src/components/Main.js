@@ -30,14 +30,14 @@ class Main extends Component {
                 <h3 className="col-md-9 ms-4">
                   <b><i className="ms-1"> {this.props.currentTitle} </i></b>
                 </h3> 
-                <h7 className="col-md-2 ms-auto pt-2">
+                <h6 className="col-md-2 ms-auto pt-2">
                   <i>
                     Share Video
                   </i>
                   <a href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`}>
                     <img className="image ms-3" width="23" height="23" src={share} alt=""></img>
                   </a>
-                </h7>
+                </h6>
        {/*          <div className="col-md-1">``
                 </div>*/}
               </div>
