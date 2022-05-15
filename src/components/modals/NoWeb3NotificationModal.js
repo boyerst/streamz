@@ -13,9 +13,7 @@ function NoWeb3NotificationModal (props) {
     <Modal
       {...props}
       size="md"
-      // aria-labelledby="contained-modal-title-vcenter"
       centered
-      // dialogClassName="modal-90w"
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">

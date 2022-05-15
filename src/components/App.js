@@ -4,6 +4,7 @@ import UseWalletProvider from './Nav'
 import Main from './Main'
 import Footer from './Footer'
 import NoWeb3NotificationModal from './modals/NoWeb3NotificationModal.js'
+import WrongNetworkModal from './modals/WrongNetworkModal.js'
 import Web3 from 'web3'
 import './App.css'
 import Streamz from '../abis/Streamz.json'
@@ -26,6 +27,14 @@ class App extends Component {
 
   hideNoWeb3Modal = () => {
     this.setState({ showModal1: false });
+  }
+
+  showWrongNetworkModal = async () => {
+    this.setState({ showModal2: true })
+  }
+
+  hideWrongNetworkModal = () => {
+    this.setState({ showModal2: false });
   }
 
 
@@ -55,8 +64,7 @@ class App extends Component {
       })
       this.setState ({ loading: false})
     } else {
-      window.alert("Incorrect Network Detected - Please Change.")
-
+      this.setState ({ showModal2: true })
     }
   }
 
@@ -110,7 +118,8 @@ class App extends Component {
       loading: true,
       currentHash: null, 
       currentTitle: null,
-      showModal1: true
+      showModal1: true,
+      showModal2: false
     }
   }
 
@@ -123,6 +132,7 @@ class App extends Component {
           disconnectWallet={this.disconnectWallet}
           showNoWeb3Modal={this.showNoWeb3Modal}
         />
+          <WrongNetworkModal show={this.state.showModal2} onHide={this.hideWrongNetworkModal} />
         { !window.ethereum 
           && 
           <NoWeb3NotificationModal show={this.state.showModal1} onHide={this.hideNoWeb3Modal}/>
