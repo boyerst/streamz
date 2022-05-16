@@ -30,7 +30,7 @@ class Main extends Component {
             </div>
           </div>
 
-          <div className="videoColumn col-sm-3 overflow-scroll text-center" style={{ maxHeight: '768px', minWidth: '275px'}}>
+          <div className="videoColumn col-sm-3 overflow-scroll text-center" >
             <form onSubmit={(event) => {
               event.preventDefault()
               const title = this.videoTitle.value
@@ -61,16 +61,16 @@ class Main extends Component {
 
             { this.props.videos.map((video, key) => {
               return (
-                <div className="card mb-3 text-center bg-light mx-auto" style={{ width: '250px' }} key={key} >
+                <div className="videoCards card mb-3 text-center bg-light mx-auto" key={key} >
                   <div className="card-title bg-secondary">
                     <small className="text-white">
                       <b>{video.title}</b>
                     </small>
 
                   </div>
-                  <div className="mx-auto" style={{ width: '210px'}}>
+                  <div className="videoCardsDiv mx-auto" >
                       <p className="mx-auto" onClick={() => this.props.changeVideo(video.hash, video.title)}>
-                        <video src={`https://ipfs.infura.io/ipfs/${video.hash}`} style={{ width: '200px' }} />
+                        <video className="videosIndex" src={`https://ipfs.infura.io/ipfs/${video.hash}`} />
                       </p>
                   </div>
                 </div>

@@ -14,22 +14,60 @@
   height: 0;
 }
 
+div .videoCards.card.mb-3.text-center.bg-light.mx-auto {
+  width: 250px;
+}
+
+div .videoColumn {
+  max-height: 768px; 
+  min-width: 275px;
+}
+
+div .videoCardsDiv {
+  width: 210px;
+}
+
+video {
+  width: 200px;
+}
+
+
 /*Main (Responsive)*/
 @media only screen and (max-width: 1123px) {
-  .videoColumn {
-    margin-top: 2px;
-    margin: 20vh auto;
-  }
+  
   video .container-fluid {
-    margin-left: 500px;
+    width: 500px;
   }
+
   .mainVideo {
     margin: 20vh auto;
     margin-left: 90px;
   }
+
   .mainVideoDiv {
     margin-bottom: -100px;
   }
+
+  div .videoColumn {
+    margin: 10vh auto;
+    min-width: 500px;
+  }
+
+  div .videoCards.card.mb-3.text-center.bg-light.mx-auto {
+    margin: 50px;
+    width: 470px;
+    height: 375px;
+  }
+  
+  div .videoCardsDiv {
+    width: 450px;
+  }
+
+  .videosIndex {
+    width: 99%;
+    display: block;
+  }
+
 }
 scrollbar-width: none; /* Firefox */
 
