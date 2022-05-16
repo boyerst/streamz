@@ -11,9 +11,9 @@ class Main extends Component {
         <br></br>
         <br></br>
         <div className="col-12 row">
-          <div className="mainVideo col-md-9">
-            <div className="mainVideoDiv center-text ms-5">
-              <video className="container-fluid modal-fullscreen-sm-down ms-1" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} style={{ maxWidth: '1200px' }} controls></video>
+          <div className="mainVideoDiv1 col-md-9">
+            <div className="mainVideoDiv2 center-text ms-5">
+              <video className="mainVideo container-fluid modal-fullscreen-sm-down ms-1" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} controls></video>
               <div className="col-12 row">
                 <h3 className="col-md-9 ms-4">
                   <b><i className="ms-1"> {this.props.currentTitle} </i></b>
@@ -30,7 +30,7 @@ class Main extends Component {
             </div>
           </div>
 
-          <div className="videoColumn col-sm-3 overflow-scroll text-center" >
+          <div className="videoIndexDiv1 col-sm-3 overflow-scroll text-center" >
             <form onSubmit={(event) => {
               event.preventDefault()
               const title = this.videoTitle.value
@@ -70,7 +70,7 @@ class Main extends Component {
                   </div>
                   <div className="videoCardsDiv mx-auto" >
                       <p className="mx-auto" onClick={() => this.props.changeVideo(video.hash, video.title)}>
-                        <video className="videosIndex" src={`https://ipfs.infura.io/ipfs/${video.hash}`} />
+                        <video className="indexedVideos" src={`https://ipfs.infura.io/ipfs/${video.hash}`} />
                       </p>
                   </div>
                 </div>

@@ -9,46 +9,49 @@
 
 /*Main*/
 
-::-webkit-scrollbar { /* Chrome Safari */
-  width: 0;
-  height: 0;
+.mainVideo {
+/*  max-width: 1200px;*/
 }
 
 div .videoCards.card.mb-3.text-center.bg-light.mx-auto {
   width: 250px;
 }
 
-div .videoColumn {
-  max-height: 768px; 
-  min-width: 275px;
-}
-
 div .videoCardsDiv {
   width: 210px;
 }
 
-video {
+.indexedVideos {
   width: 200px;
 }
+
+::-webkit-scrollbar { /* Chrome Safari */
+  width: 0;
+  height: 0;
+}
+
+
 
 
 /*Main (Responsive)*/
 @media only screen and (max-width: 1123px) {
   
-  video .container-fluid {
-    width: 500px;
+
+  .mainVideoDiv1 {
+    margin: 20vh auto;
+/*    margin-left: 90px;*/
+  }
+
+  .mainVideoDiv2 {
+    margin-bottom: -100px;
+  /*  width: 900px;*/
   }
 
   .mainVideo {
-    margin: 20vh auto;
-    margin-left: 90px;
+    max-width: 1000px;
+    margin-left: 10px;
   }
-
-  .mainVideoDiv {
-    margin-bottom: -100px;
-  }
-
-  div .videoColumn {
+  .videoIndexDiv1 {
     margin: 10vh auto;
     min-width: 500px;
   }
@@ -63,7 +66,7 @@ video {
     width: 450px;
   }
 
-  .videosIndex {
+  .indexedVideos {
     width: 99%;
     display: block;
   }
