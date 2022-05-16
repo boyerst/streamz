@@ -11,8 +11,8 @@ class Main extends Component {
         <br></br>
         <br></br>
         <div className="col-12 row">
-          <div className="col-md-9">
-            <div className="center-text ms-5">
+          <div className="mainVideo col-md-9">
+            <div className="mainVideoDiv center-text ms-5">
               <video className="container-fluid modal-fullscreen-sm-down ms-1" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} style={{ maxWidth: '1200px' }} controls></video>
               <div className="col-12 row">
                 <h3 className="col-md-9 ms-4">
@@ -30,7 +30,7 @@ class Main extends Component {
             </div>
           </div>
 
-          <div className="col-sm-3 overflow-scroll text-center" style={{ maxHeight: '768px', minWidth: '275px'}}>
+          <div className="videoColumn col-sm-3 overflow-scroll text-center" style={{ maxHeight: '768px', minWidth: '275px'}}>
             <form onSubmit={(event) => {
               event.preventDefault()
               const title = this.videoTitle.value
