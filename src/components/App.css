@@ -18,11 +18,12 @@ div .videoCards.card.mb-3.text-center.bg-light.mx-auto {
 }
 
 div .videoCardsDiv {
-  width: 210px;
+  width: 220px;
 }
 
 .indexedVideos {
-  width: 200px;
+  width: 220px;
+
 }
 
 input {
@@ -53,14 +54,8 @@ input {
   }
 
   .mainVideoDiv2 {
-    margin-bottom: -100px;
-    width: 100%;
+    margin-bottom: -30px;
   }
-
-/*  .mainVideo {  
-    width: 100%;
-    max-width: 1000px;
-  }*/
 
   .videoIndexDiv1 {
     margin: 10vh auto;
