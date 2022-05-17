@@ -30,7 +30,7 @@ class Main extends Component {
             </div>
           </div>
 
-          <div className="videoIndexDiv1 col-sm-3 overflow-scroll text-center" >
+          <div className="videoIndexDiv col-sm-3 overflow-scroll text-center" >
             <form onSubmit={(event) => {
               event.preventDefault()
               const title = this.videoTitle.value
@@ -68,9 +68,9 @@ class Main extends Component {
                     </small>
 
                   </div>
-                  <div className="videoCardsDiv mx-auto" >
+                  <div className="videoDivs mx-auto" >
                       <p className="mx-auto" onClick={() => this.props.changeVideo(video.hash, video.title)}>
-                        <video className="indexedVideos" src={`https://ipfs.infura.io/ipfs/${video.hash}`} />
+                        <video className="videoTag" src={`https://ipfs.infura.io/ipfs/${video.hash}`} />
                       </p>
                   </div>
                 </div>

@@ -4,6 +4,7 @@ import { useWallet } from 'use-wallet'
 import Web3 from 'web3'
 import { Button, ButtonToolbar, Navbar } from 'react-bootstrap';
 import { ReactComponent as Wallet } from '../wallet.svg'
+import Identicon from 'identicon.js'
 
 
 
@@ -44,7 +45,13 @@ function Nav(props) {
       { wallet.status === 'connected' ? (
         <ButtonToolbar className="ms-auto me-3">
           <Button className="wallet btn-sm me-2 pb-0" variant="outline-light">
-            <Wallet className="pe-2 pb-1" width="25" height="25"/>
+            {/*<Wallet className="pe-2 pb-1" width="25" height="25"/>*/}
+          <img 
+            className="ml-2 mb-1 me-1"
+            width='17'
+            height='15'
+            src={`data:image/png;base64,${new Identicon(wallet.account, 30).toString()}`}
+          />
             <a>{wallet.account ? wallet.account.substring(0,6) : '0x0'}...{wallet.account ? wallet.account.substring(38,42) : ''}</a>
             &nbsp;|&nbsp;
             {web3.utils.fromWei(wallet.balance, 'ether')} ETH
