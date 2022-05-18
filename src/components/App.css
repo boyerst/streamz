@@ -136,7 +136,12 @@ fill :hover {
   font-family:  "Monaco";
 }
 
-.modal-title {
+/*.modal-header {
+  text-align: center;
+}
+*/
+
+#contained-modal-title-vcenter {
   text-align: center;
 }
 
