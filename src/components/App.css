@@ -4,6 +4,12 @@
   font-family: "Monaco";
 }
 
+.title {
+  font-size: !important 1000px;
+  font-family: 'Tourney', cursive;
+  margin-bottom: -8px;
+  margin-top: -14px;
+} 
 
 
 
