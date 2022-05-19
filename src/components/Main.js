@@ -30,7 +30,7 @@ class Main extends Component {
             </div>
           </div>
 
-          <div className="videoIndexDiv col-sm-3 overflow-scroll text-center" >
+          <div className="videoIndexDiv col-sm-3 overflow-auto text-center" >
             <form onSubmit={(event) => {
               event.preventDefault()
               const title = this.videoTitle.value
