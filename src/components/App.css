@@ -25,6 +25,10 @@ div .videoCardsDiv {
   width: 220px;
 }
 
+div .card-title {
+  background-color: #80FF66;
+}
+
 .videoTag {
   width: 220px;
 

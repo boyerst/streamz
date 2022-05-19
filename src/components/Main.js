@@ -62,8 +62,8 @@ class Main extends Component {
             { this.props.videos.map((video, key) => {
               return (
                 <div className="videoCards card mb-3 text-center bg-light mx-auto" key={key} >
-                  <div className="card-title bg-secondary">
-                    <small className="text-white">
+                  <div className="card-title">
+                    <small >
                       <b>{video.title}</b>
                     </small>
 
