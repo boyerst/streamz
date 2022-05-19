@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal'
 import '../App.css'
-import logo from '../../Metamask.png'
+import MMLogo from '../../images/Metamask.png'
 
 
 function NoWeb3NotificationModal (props) {
@@ -25,7 +25,7 @@ function NoWeb3NotificationModal (props) {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="flat" className="mx-auto modal-button" onClick={props.onHide}>
-          <img src={logo} className="me-2 ms-0" width="25" height="25" alt="" />
+          <img src={MMLogo} className="me-2 ms-0" width="25" height="25" alt="" />
           <a href="https://www.metamask.io" rel="noopener noreferrer" target="_blank" className="metamask" >
           Download MetaMask
           </a>

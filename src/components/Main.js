@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
-import share from '../share-icon.png'
+import share from '../images/share-icon.png'
 
 
 class Main extends Component {

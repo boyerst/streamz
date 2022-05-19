@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal'
 import '../App.css'
-import logo from '../../Metamask.png'
+import logo from '../../images/Metamask.png'
 
 
 

@@ -3,7 +3,7 @@ import './App.css'
 import { useWallet } from 'use-wallet'
 import Web3 from 'web3'
 import { Button, ButtonToolbar, Navbar } from 'react-bootstrap';
-import { ReactComponent as Wallet } from '../wallet.svg'
+import IPFS from '../images/IPFS.png'
 import Identicon from 'identicon.js'
 
 
@@ -40,8 +40,10 @@ function Nav(props) {
     <Navbar className= "navbar-dark bg-gradient p-1 shadow-lg text-monospace">
 
       <Navbar.Brand href="#!">
-        Streamz 
+        <img src={IPFS} className="me-2" width="35" height="35" alt="" />
+        StreamZ 
       </Navbar.Brand> 
+     
       { wallet.status === 'connected' ? (
         <ButtonToolbar className="ms-auto me-3">
           <Button className="wallet btn-sm me-2 pb-0" variant="outline-light">
