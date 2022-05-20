@@ -4,12 +4,7 @@
   font-family: "Monaco";
 }
 
-.title {
-  font-size: !important 1000px;
-  font-family: 'Tourney', cursive;
-  margin-bottom: -8px;
-  margin-top: -14px;
-} 
+
 
 
 
@@ -104,17 +99,13 @@ scrollbar-width: none; /* Firefox */
 
 /*Nav*/
 
-fill :hover {
-  fill: black;
-}
+.title {
+  font-size: !important 1000px;
+  font-family: 'Tourney', cursive;
+  margin-bottom: -8px;
+  margin-top: -14px;
+} 
 
-.btn-sm svg {
-  fill: white;
-}
-
-.btn-sm:hover svg {
-  fill: black;
-}
 
 .wallet.btn-sm.me-2.pb-0 {
   font-size: 12px;
@@ -150,11 +141,6 @@ fill :hover {
 .modal {
   font-family:  "Monaco";
 }
-
-/*.modal-header {
-  text-align: center;
-}
-*/
 
 #contained-modal-title-vcenter {
   text-align: center;
