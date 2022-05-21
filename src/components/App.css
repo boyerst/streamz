@@ -140,9 +140,10 @@ scrollbar-width: none; /* Firefox */
   font-size: 12px;
 }
 
-.navbar-dark {
+.navigation {
   background-color: #6E31E0;
   font-family: "Monaco";
+  margin-bottom: 50px;
 }
 
 .navbar-brand {

@@ -6,7 +6,7 @@ import './App.css'
 class Footer extends Component {
   render() {
     return (
-      <Navbar className="shadow-lg navbar-dark footer bg-gradient">
+      <Navbar className="footer shadow-lg navbar-dark bg-gradient">
         <Navbar.Brand className="footer-content">
           Created by &copy;Sopro
         </Navbar.Brand>
