@@ -22,7 +22,7 @@ class Main extends Component {
                   <i>
                     Share Video
                   </i>
-                  <a href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`}>
+                  <a href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} target="_blank">
                     <img className="shareImage ms-3" width="23" height="23" src={share} alt=""></img>
                   </a>
                 </h6>
@@ -35,7 +35,6 @@ class Main extends Component {
               event.preventDefault()
               const title = this.videoTitle.value
               this.props.uploadVideo(title)
-    
             }}>
             &nbsp;
               <input 
