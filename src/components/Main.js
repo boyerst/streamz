@@ -19,10 +19,10 @@ class Main extends Component {
                   <b><i className="ms-1"> {this.props.currentTitle} </i></b>
                 </h3> 
                 <h6 className="col-md-2 ms-auto pt-2">
-                  <i>
-                    Share Video
-                  </i>
-                  <a href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} target="_blank">
+                  <a className="shareVideo" href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} target="_blank">
+                    <i>
+                      Share Video
+                    </i>
                     <img className="shareImage ms-3" width="23" height="23" src={share} alt=""></img>
                   </a>
                 </h6>
