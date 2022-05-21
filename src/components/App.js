@@ -89,6 +89,8 @@ class App extends Component {
     console.log(video.path)
     this.setState({ loading: true })
     this.state.streamz.methods.uploadVideo(video.path, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
+      this.loadBlockchainData()
+
       this.setState({ loading: false })   
     })
     console.log(this.state)
