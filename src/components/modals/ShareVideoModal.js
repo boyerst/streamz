@@ -19,7 +19,10 @@ function ShareVideoModal (props) {
         <Modal.Title id="contained-modal-title-vcenter">
          <small>
          <img src={IPFS} className="me-2 ms-0" width="25" height="25" alt="" />
-          <input onFocus={e => e.target.select()} type="text" style={{minWidth: "450px"}} value={`https://ipfs.infura.io/ipfs/${props.currentHash}`}/>
+          <input 
+            onFocus={e => e.target.select()} 
+            onClick={ () => { navigator.clipboard.writeText(`https://ipfs.infura.io/ipfs/${props.currentHash}`) } }
+            type="text" style={{minWidth: "650px"}} value={`https://ipfs.infura.io/ipfs/${props.currentHash}`}/>
          </small>
         </Modal.Title>
       </Modal.Header>
@@ -28,7 +31,6 @@ function ShareVideoModal (props) {
 }
 
 
-// Add IPFS logo
 // Add 'Copy' input w button similar to Youtube
 // Automatically highlight entire URL before user clicks
 // Concanceated link to just show ipfs and some of the address

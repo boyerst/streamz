@@ -9,7 +9,6 @@ import ShareVideoModal from './modals/ShareVideoModal.js'
 import Web3 from 'web3'
 import './App.css'
 import Streamz from '../abis/Streamz.json'
-// import Spinner from 'react-bootstrap/Spinner';
 import RiseLoader from "react-spinners/RiseLoader";
 import { create } from 'ipfs-http-client'
 
@@ -30,9 +29,9 @@ class App extends Component {
     this.setState({ showModal1: false });
   }
 
-  showWrongNetworkModal = async () => {
-    this.setState({ showModal2: true })
-  }
+  // showWrongNetworkModal = async () => {
+  //   this.setState({ showModal2: true })
+  // }
 
   hideWrongNetworkModal = () => {
     this.setState({ showModal2: false });
@@ -147,12 +146,12 @@ class App extends Component {
           <ShareVideoModal show={this.state.showModal3} onHide={this.hideShareVideoModal} currentHash={this.state.currentHash} />
         { !window.ethereum 
           && 
-          <NoWeb3NotificationModal show={this.state.showModal1} onHide={this.hideNoWeb3Modal}/>
+          <NoWeb3NotificationModal show={this.state.showModal1} onHide={this.hideNoWeb3Modal} />
         }
         { this.state.loading 
           ? 
-          <div className="d-flex align-items-center justify-content-center" style={{ height: "650px"}} >
-            <RiseLoader className="loader-icon align-items-center" size="120px"  color="#6E31E0" css={{ opacity:"0.5" }} speedMultiplier={.17}/>
+          <div className="d-flex align-items-center justify-content-center" style={{ height: "650px"}}>
+            <RiseLoader className="loader-icon align-items-center" size="120px"  color="#6E31E0" css={{ opacity:"0.5" }} speedMultiplier={.17} />
           </div>
           :
           <Main 
