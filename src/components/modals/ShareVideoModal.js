@@ -12,7 +12,7 @@ function ShareVideoModal (props) {
 
     <Modal
       {...props}
-      size="lg"
+      size="xl"
       centered
     >
       <Modal.Header closeButton>
@@ -21,9 +21,11 @@ function ShareVideoModal (props) {
          <img src={IPFS} className="me-2 ms-0" width="25" height="25" alt="" />
           <input 
             onFocus={e => e.target.select()} 
-            onClick={ () => { navigator.clipboard.writeText(`https://ipfs.infura.io/ipfs/${props.currentHash}`) } }
             type="text" style={{minWidth: "650px"}} value={`https://ipfs.infura.io/ipfs/${props.currentHash}`}/>
          </small>
+         <Button className="ms-3" onClick={ () => { navigator.clipboard.writeText(`https://ipfs.infura.io/ipfs/${props.currentHash}`) } }>
+           Copy
+         </Button>
         </Modal.Title>
       </Modal.Header>
     </Modal>
