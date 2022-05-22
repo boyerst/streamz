@@ -5,6 +5,7 @@ import Main from './Main'
 import Footer from './Footer'
 import NoWeb3NotificationModal from './modals/NoWeb3NotificationModal.js'
 import WrongNetworkModal from './modals/WrongNetworkModal.js'
+import ShareVideoModal from './modals/ShareVideoModal.js'
 import Web3 from 'web3'
 import './App.css'
 import Streamz from '../abis/Streamz.json'
@@ -35,6 +36,14 @@ class App extends Component {
 
   hideWrongNetworkModal = () => {
     this.setState({ showModal2: false });
+  }
+
+  showShareVideoModal = async () => {
+    this.setState({ showModal3: true })
+  }
+
+  hideShareVideoModal = () => {
+    this.setState({ showModal3: false });
   }
 
 
@@ -120,7 +129,8 @@ class App extends Component {
       currentHash: null, 
       currentTitle: null,
       showModal1: true,
-      showModal2: false
+      showModal2: false,
+      showModal3: false
     }
   }
 
@@ -134,6 +144,7 @@ class App extends Component {
           showNoWeb3Modal={this.showNoWeb3Modal}
         />
           <WrongNetworkModal show={this.state.showModal2} onHide={this.hideWrongNetworkModal} />
+          <ShareVideoModal show={this.state.showModal3} onHide={this.hideShareVideoModal} currentHash={this.state.currentHash} />
         { !window.ethereum 
           && 
           <NoWeb3NotificationModal show={this.state.showModal1} onHide={this.hideNoWeb3Modal}/>
@@ -151,6 +162,7 @@ class App extends Component {
             currentTitle={this.state.currentTitle} 
             currentHash={this.state.currentHash} 
             changeVideo={this.changeVideo} 
+            showShareVideoModal={this.showShareVideoModal}
           />
         }
         <Footer />
