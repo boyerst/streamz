@@ -29,10 +29,6 @@ class App extends Component {
     this.setState({ showModal1: false });
   }
 
-  // showWrongNetworkModal = async () => {
-  //   this.setState({ showModal2: true })
-  // }
-
   hideWrongNetworkModal = () => {
     this.setState({ showModal2: false });
   }

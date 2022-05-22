@@ -46,7 +46,6 @@ function Nav(props) {
       { wallet.status === 'connected' ? (
         <ButtonToolbar className="ms-auto me-3">
           <Button className="wallet btn-sm me-2 pb-0" variant="outline-light">
-            {/*<Wallet className="pe-2 pb-1" width="25" height="25"/>*/}
           <img 
             className="mb-1 me-1 rounded"
             width='17'

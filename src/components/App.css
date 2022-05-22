@@ -59,11 +59,12 @@ div .card-title {
 .uploadButton.mb-5.btn.btn-danger.btn-sm.hover-shadow {
   min-width: 225px;
   margin: auto;
-  font-size: 13px;
+  font-size: 85%;
 }
 
 input {
   max-width: 225px;
+  font-size: 85% !important;
 }
 
 ::-webkit-scrollbar { /* Chrome Safari */

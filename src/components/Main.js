@@ -56,7 +56,7 @@ class Main extends Component {
                 <input 
                   id="videoTitle" 
                   type="text" 
-                  size="20"
+                  // size="20"
                   className="form-control-sm" 
                   placeholder="Title..." 
                   ref={(input) => { this.videoTitle = input }}
