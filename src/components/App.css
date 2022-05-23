@@ -56,15 +56,19 @@ div .card-title {
   width: 220px;
 }
 
-.uploadButton.mb-5.btn.btn-danger.btn-sm.hover-shadow {
-  min-width: 225px;
-  margin: auto;
-  font-size: 85%;
+.uploadVideoDiv {
+  margin-bottom: 70px;
+}
+
+.uploadButton.btn-danger {
+  min-width: 200px;
+  text-align: center;
+  font-size: 90%;
 }
 
 input {
   max-width: 225px;
-  font-size: 85% !important;
+  font-size: 90% !important;
 }
 
 ::-webkit-scrollbar { /* Chrome Safari */

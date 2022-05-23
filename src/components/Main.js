@@ -51,9 +51,10 @@ class Main extends Component {
                 accept=".mp4, .mkv, .ogg, .wmv" 
                 // style={{ width: '250px' }} 
                 onChange={this.props.captureFile} />
-              <div className="form-group me-sm-3">
+              <div className="form-group">
                 <br></br>
                 <input 
+                  className="col-7"
                   id="videoTitle" 
                   type="text" 
                   // size="20"
@@ -61,14 +62,14 @@ class Main extends Component {
                   placeholder="Title..." 
                   ref={(input) => { this.videoTitle = input }}
                   required 
-                  className="col-7 ms-3"/>
+                />
               </div>
               &nbsp;
-              <div className="d-grid col-7 mx-auto">
-                <button type="submit" className="uploadButton mb-5 btn btn-danger btn-sm hover-shadow">Upload Video</button>
+              <div className="uploadVideoDiv">
+                <button type="submit" className="uploadButton btn-danger btn-sm hover-shadow">Upload Video</button>
               </div>
             </form>
-
+           
             { this.props.videos.map((video, key) => {
               return (
                 <div className="videoCards card mb-3 text-center bg-light mx-auto" key={key} >
@@ -86,7 +87,6 @@ class Main extends Component {
                 </div>
               )
             })}
-            
           </div>
         </div>
       </div>
