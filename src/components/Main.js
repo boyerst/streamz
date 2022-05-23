@@ -18,7 +18,7 @@ class Main extends Component {
                 <h3 className="col-md-9 ms-4">
                   <b><i className="ms-1"> {this.props.currentTitle} </i></b>
                 </h3> 
-                <h6 className="col-md-2 ms-auto pt-2">
+                <h6 className="shareVideoH col-md-2 pt-2">
 {/*                  <a className="shareVideo" href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} target="_blank">
                     <i>
                       Share Video
