@@ -176,7 +176,7 @@ scrollbar-width: none; /* Firefox */
   .mainVideoDiv1 {
     margin: 20vh auto;
     margin-left: -20px;
-    width: 70%;
+    /*width: 70%;*/
 
   }
 
