@@ -11,7 +11,7 @@ class Main extends Component {
         <br></br>
         <br></br>
         <div className="col-12 row">
-          <div className="mainVideoDiv1 col-md-9">
+          <div className="mainVideoDiv1 col-lg-9">
             <div className="mainVideoDiv2 center-text ms-5">
               <video className="mainVideo container-fluid modal-fullscreen-sm-down ms-1" src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} controls></video>
               <div className="col-12 row">
