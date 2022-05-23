@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'react-bootstrap';
 import './App.css'
 import share from '../images/share-icon.png'
 
@@ -26,12 +27,12 @@ class Main extends Component {
                     <img className="shareImage ms-3" width="23" height="23" src={share} alt=""></img>
                   </a>*/}
 
-                  <button className="shareVideo" onClick={this.props.showShareVideoModal}>
+                  <Button className="shareVideo" variant="light" onClick={this.props.showShareVideoModal}>
                     <i>
                       Share Video
                     </i>
                     <img className="shareImage ms-3" width="23" height="23" src={share} alt=""></img>
-                  </button>
+                  </Button>
                  
 
                 </h6>
