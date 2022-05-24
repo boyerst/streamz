@@ -12,7 +12,6 @@
 
 .mainVideo {
 /*  max-width: 1200px;*/
-
 }
 
 .shareVideoH {
@@ -21,13 +20,10 @@
   margin-right: 0;
 }
 
-
 .shareVideo {
 /*  text-decoration: none;*/
   color: black;
   float: right;
-
-
 }
 
 .shareVideo:hover {
@@ -64,7 +60,7 @@ div .card-title {
   font-size: 90%;
 }
 
-input {
+.videoUploadInputs {
   max-width: 225px;
   font-size: 90% !important;
 }
@@ -77,9 +73,6 @@ input {
 scrollbar-width: none; /* Firefox */
 
 -ms-overflow-style: none; /* IE 10+ */
-
-
-
 
 
 
@@ -148,6 +141,19 @@ scrollbar-width: none; /* Firefox */
   background-color: #6E31E0;
 }
 
+
+
+/*ShareVideoModal*/
+
+.shareVideoModal {
+  min-width: 830px;
+}
+
+.shareVideoInput {
+  min-width: 635px;
+}
+
+  
 
 
 

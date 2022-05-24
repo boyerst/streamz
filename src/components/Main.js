@@ -48,6 +48,7 @@ class Main extends Component {
             }}>
             &nbsp;
               <input 
+                className="videoUploadInputs"
                 type="file" 
                 accept=".mp4, .mkv, .ogg, .wmv" 
                 // style={{ width: '250px' }} 
@@ -58,7 +59,6 @@ class Main extends Component {
                   className="col-7"
                   id="videoTitle" 
                   type="text" 
-                  // size="20"
                   className="form-control-sm" 
                   placeholder="Title..." 
                   ref={(input) => { this.videoTitle = input }}
