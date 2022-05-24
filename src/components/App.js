@@ -139,7 +139,7 @@ class App extends Component {
           showNoWeb3Modal={this.showNoWeb3Modal}
         />
           <WrongNetworkModal show={this.state.showModal2} onHide={this.hideWrongNetworkModal} />
-          <ShareVideoModal show={this.state.showModal3} onHide={this.hideShareVideoModal} currentHash={this.state.currentHash} />
+          <ShareVideoModal show={this.state.showModal3} onHide={this.hideShareVideoModal} currenthash={this.state.currentHash} />
         { !window.ethereum 
           && 
           <NoWeb3NotificationModal show={this.state.showModal1} onHide={this.hideNoWeb3Modal} />

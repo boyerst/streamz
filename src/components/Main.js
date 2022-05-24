@@ -27,7 +27,7 @@ class Main extends Component {
                     <img className="shareImage ms-3" width="23" height="23" src={share} alt=""></img>
                   </a>*/}
 
-                  <Button className="shareVideo" variant="light" onClick={this.props.showShareVideoModal}>
+                  <Button className="shareVideo" size="sm" variant="light" onClick={this.props.showShareVideoModal}>
                     <i>
                       Share Video
                     </i>
