@@ -3,8 +3,8 @@ import './App.css'
 import { useWallet } from 'use-wallet'
 import Web3 from 'web3'
 import { Button, ButtonToolbar, Navbar } from 'react-bootstrap';
-import IPFS from '../images/IPFS.png'
 import Identicon from 'identicon.js'
+import IPFS from '../images/IPFS.png'
 
 
 

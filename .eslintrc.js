@@ -19,6 +19,9 @@ module.exports = {
   ],
   rules: {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "quotes": [0, "double"]
+    "quotes": [0, "double"],
+    "semi": [0, "never"],
+    "quote-props": "off"
+
   },
 };

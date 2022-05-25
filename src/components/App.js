@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
+import Web3 from 'web3'
 import { create } from 'ipfs-http-client'
+import RiseLoader from "react-spinners/RiseLoader";
 import Nav from './Nav'
-import UseWalletProvider from './Nav'
 import Main from './Main'
 import Footer from './Footer'
-import NoWeb3NotificationModal from './modals/NoWeb3NotificationModal.js'
-import WrongNetworkModal from './modals/WrongNetworkModal.js'
-import ShareVideoModal from './modals/ShareVideoModal.js'
-import Web3 from 'web3'
+import NoWeb3NotificationModal from './modals/NoWeb3NotificationModal'
+import WrongNetworkModal from './modals/WrongNetworkModal'
+import ShareVideoModal from './modals/ShareVideoModal'
 import './App.css'
 import Streamz from '../abis/Streamz.json'
-import RiseLoader from "react-spinners/RiseLoader";
 
 
 
