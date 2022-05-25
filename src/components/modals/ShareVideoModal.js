@@ -18,7 +18,7 @@ function ShareVideoModal (props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          <div className="form-control">
+          <div className="form-control" >
             <small>
               <img src={IPFS} className="me-2 ms-0" width="25" height="25" alt="" />
               <input 
