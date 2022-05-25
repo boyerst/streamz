@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { create } from 'ipfs-http-client'
 import Nav from './Nav'
 import UseWalletProvider from './Nav'
 import Main from './Main'
@@ -10,7 +11,6 @@ import Web3 from 'web3'
 import './App.css'
 import Streamz from '../abis/Streamz.json'
 import RiseLoader from "react-spinners/RiseLoader";
-import { create } from 'ipfs-http-client'
 
 
 
@@ -122,7 +122,7 @@ class App extends Component {
       videos: [],
       videosCount: 0,
       loading: true,
-      currentHash: null, 
+      currentHash: null,
       currentTitle: null,
       showModal1: true,
       showModal2: false,
