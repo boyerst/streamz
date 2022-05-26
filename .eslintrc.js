@@ -16,12 +16,19 @@ module.exports = {
   },
   plugins: [
     'react',
+
   ],
   rules: {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-wrap-multilines": "off",
     "quotes": [0, "double"],
     "semi": [0, "never"],
-    "quote-props": "off"
+    "padded-blocks": ["error", { "classes": "always" }],
+    "react/destructuring-assignment": "off",
+    "comma-dangle": "off",
+    "quote-props": "off",
+    "operator-linebreak": "off",
+    "no-multiple-empty-lines": "off"
 
   },
 };

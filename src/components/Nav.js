@@ -16,12 +16,12 @@ function Nav(props) {
   const web3 = new Web3(Web3.currentProvider)
 
 
-    const connectWallet = async (e) => {
+  const connectWallet = async (e) => {
     e.preventDefault()
     console.log("Connect button")
     if (window.ethereum) {
       await wallet.connect()
-      await props.loadBlockchainData()  
+      await props.loadBlockchainData()
     } else {
       console.log("Route to modal")
       props.showNoWeb3Modal()
@@ -32,24 +32,25 @@ function Nav(props) {
   const disconnectWallet = async (e) => {
     e.preventDefault()
     await wallet.reset(wallet.account)
-    await props.disconnectWallet()  
+    await props.disconnectWallet()
   }
 
 
-  return (  
-    <Navbar className= "navigation navbar-dark bg-gradient p-1 shadow-lg text-monospace">
-      <Navbar.Brand href="#!" className="title" style={{ fontSize:"40px" }}>
+  return (
+    <Navbar className="navigation navbar-dark bg-gradient p-1 shadow-lg text-monospace">
+      <Navbar.Brand href="#!" className="title" style={{ fontSize: "40px" }}>
         <img src={IPFS} className="me-2 mb-1" width="40" height="40" alt="" />
-        StreamZ 
-      </Navbar.Brand> 
-     
+        StreamZ
+      </Navbar.Brand>
+
       { wallet.status === 'connected' ? (
         <ButtonToolbar className="ms-auto me-3">
           <Button className="wallet btn-sm me-2 pb-0" variant="outline-light">
-          <img 
+          <img
             className="mb-1 me-1 rounded"
             width='17'
             height='15'
+            alt=""
             src={`data:image/png;base64,${new Identicon(wallet.account, 30).toString()}`}
           />
             <a>{wallet.account ? wallet.account.substring(0,6) : '0x0'}...{wallet.account ? wallet.account.substring(38,42) : ''}</a>
@@ -57,13 +58,13 @@ function Nav(props) {
             {web3.utils.fromWei(wallet.balance, 'ether')} ETH
           </Button>
           <Button className="disconnect btn-sm pb-.25" variant="outline-light" onClick={disconnectWallet}> 
-            Disconnect 
+            Disconnect
           </Button>
-        </ButtonToolbar> 
-      ):(
+        </ButtonToolbar>
+      ) : (
         <Button className="connect btn-sm ms-auto me-3" variant="outline-light" onClick={connectWallet}>
           Connect Wallet
-        </Button>  
+        </Button> 
       )}
     </Navbar>
   )

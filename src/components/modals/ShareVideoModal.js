@@ -6,7 +6,7 @@ import IPFS from '../../images/IPFS.png'
 
 
 
-function ShareVideoModal (props) {
+function ShareVideoModal(props) {
 
   return (
 
@@ -18,17 +18,17 @@ function ShareVideoModal (props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          <div className="form-control" >
+          <div className="form-control">
             <small>
               <img src={IPFS} className="me-2 ms-0" width="25" height="25" alt="" />
-              <input 
+              <input
                 className="shareVideoInput"
-                onFocus={e => e.target.select()} 
-                type="text" 
+                onFocus={e => e.target.select()}
+                type="text"
                 defaultValue={`https://ipfs.infura.io/ipfs/${props.currenthash}`}
               />
             </small>
-            <Button className="ms-3" size="sm" onClick={ () => { navigator.clipboard.writeText(`https://ipfs.infura.io/ipfs/${props.currenthash}`) } }>
+            <Button className="ms-3" size="sm" onClick={() => { navigator.clipboard.writeText(`https://ipfs.infura.io/ipfs/${props.currenthash}`) }}>
               Copy
             </Button>
           </div>

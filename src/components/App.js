@@ -20,6 +20,21 @@ const ipfs = create({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
 
 class App extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      account: '',
+      streamz: null,
+      videos: [],
+      videosCount: 0,
+      loading: true,
+      currentHash: null,
+      currentTitle: null,
+      showModal1: true,
+      showModal2: false,
+      showModal3: false
+    }
+  }
 
   showNoWeb3Modal = async () => {
     this.setState({ showModal1: true })
@@ -50,31 +65,31 @@ class App extends Component {
     this.setState({ account: accounts[0] })
     const networkId = await web3.eth.net.getId()
     const networkData = Streamz.networks[networkId]
-    if(networkData) {
+    if (networkData) {
       const streamz = new web3.eth.Contract(Streamz.abi, networkData.address)
       this.setState({ streamz })
       const videosCount = await streamz.methods.videoCount().call()
       this.setState({ videosCount })
-      for(var i = 1; i <= videosCount; i++) {
+      for (var i = 1; i <= videosCount; i++) {
         const video = await streamz.methods.videos(i).call()
         this.setState({
           videos: [...this.state.videos, video]
-        }) 
+        })
       }
       const latest = await streamz.methods.videos(videosCount).call()
       this.setState({
         currentHash: latest.hash,
         currentTitle: latest.title
       })
-      this.setState ({ loading: false})
+      this.setState({ loading: false })
     } else {
-      this.setState ({ showModal2: true })
+      this.setState({ showModal2: true })
     }
   }
 
 
 
-  captureFile = event => {
+  captureFile = (event) => {
     event.preventDefault()
     const file = event.target.files[0]
     const reader = new window.FileReader()
@@ -94,76 +109,73 @@ class App extends Component {
     this.setState({ loading: true })
     this.state.streamz.methods.uploadVideo(video.path, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
       this.loadBlockchainData()
-      this.setState({ loading: false })   
+      this.setState({ loading: false })
     })
     console.log(this.state)
   }
-  
+
+
   changeVideo = (hash, title) => {
     this.setState({
       'currentHash': hash,
-      'currentTitle': title});
+      'currentTitle': title
+    });
   }
 
   disconnectWallet = async () => {
     this.setState({
       videos: [],
-      currentHash: null, 
+      currentHash: null,
       currentTitle: null
-    }) 
+    })
   }
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      account: '',
-      streamz: null,
-      videos: [],
-      videosCount: 0,
-      loading: true,
-      currentHash: null,
-      currentTitle: null,
-      showModal1: true,
-      showModal2: false,
-      showModal3: false
-    }
-  }
 
 
   render() {
     return (
       <div>
-        <Nav 
+        <Nav
           loadBlockchainData={this.loadBlockchainData}
           disconnectWallet={this.disconnectWallet}
           showNoWeb3Modal={this.showNoWeb3Modal}
         />
-          <WrongNetworkModal show={this.state.showModal2} onHide={this.hideWrongNetworkModal} />
-          <ShareVideoModal show={this.state.showModal3} onHide={this.hideShareVideoModal} currenthash={this.state.currentHash} />
-        { !window.ethereum 
-          && 
+        <WrongNetworkModal
+          show={this.state.showModal2}
+          onHide={this.hideWrongNetworkModal}
+        />
+        <ShareVideoModal
+          show={this.state.showModal3}
+          onHide={this.hideShareVideoModal}
+          currenthash={this.state.currentHash}
+        />
+        {
+          !window.ethereum
+          &&
           <NoWeb3NotificationModal show={this.state.showModal1} onHide={this.hideNoWeb3Modal} />
         }
-        { this.state.loading 
-          ? 
-          <div className="d-flex align-items-center justify-content-center" style={{ height: "650px"}}>
-            <RiseLoader className="loader-icon align-items-center" size="120px"  color="#6E31E0" css={{ opacity:"0.5" }} speedMultiplier={.17} />
-          </div>
-          :
-          <Main 
-            videos={this.state.videos}
-            captureFile={this.captureFile} 
-            uploadVideo={this.uploadVideo} 
-            currentTitle={this.state.currentTitle} 
-            currentHash={this.state.currentHash} 
-            changeVideo={this.changeVideo} 
-            showShareVideoModal={this.showShareVideoModal}
-          />
+        {
+          this.state.loading
+            ?
+              <div className="d-flex align-items-center justify-content-center" style={{ height: "650px" }}>
+                <RiseLoader className="loader-icon align-items-center" size="120px" color="#6E31E0" css={{ opacity: "0.5" }} speedMultiplier={0.17} />
+              </div>
+            :
+              <Main
+                videos={this.state.videos}
+                captureFile={this.captureFile}
+                uploadVideo={this.uploadVideo}
+                currentTitle={this.state.currentTitle}
+                currenthash={this.state.currentHash}
+                changeVideo={this.changeVideo}
+                showShareVideoModal={this.showShareVideoModal}
+              />
         }
         <Footer />
       </div>
     );
   }
+
 }
 
 
