@@ -103,10 +103,10 @@ class App extends Component {
   uploadVideo = async (title) => {
     console.log("Uploading Video to IPFS...")
     // console.log(ipfs)
+    this.setState({ loading: true })
     const video = await ipfs.add(this.state.buffer)
     // console.log(video)
     console.log(video.path)
-    this.setState({ loading: true })
     this.state.streamz.methods.uploadVideo(video.path, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
       this.loadBlockchainData()
       this.setState({ loading: false })
