@@ -117,8 +117,8 @@ class App extends Component {
 
   changeVideo = (hash, title) => {
     this.setState({
-      'currentHash': hash,
-      'currentTitle': title
+      currentHash: hash,
+      currentTitle: title
     });
   }
 
@@ -126,7 +126,8 @@ class App extends Component {
     this.setState({
       videos: [],
       currentHash: null,
-      currentTitle: null
+      currentTitle: null,
+      loading: true
     })
   }
 
