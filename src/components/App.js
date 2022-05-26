@@ -70,7 +70,7 @@ class App extends Component {
       this.setState({ streamz })
       const videosCount = await streamz.methods.videoCount().call()
       this.setState({ videosCount })
-      for (let i = 1; i <= videosCount; i++) {
+      for (let i = 1; i <= videosCount; i += 1) {
         const video = await streamz.methods.videos(i).call()
         this.setState({
           videos: [...this.state.videos, video]

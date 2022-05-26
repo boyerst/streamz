@@ -18,7 +18,9 @@ class Main extends Component {
               <video className="mainVideo container-fluid modal-fullscreen-sm-down ms-1" src={`https://ipfs.infura.io/ipfs/${this.props.currenthash}`} controls></video>
               <div className="col-12 row">
                 <h3 className="col-md-9 ms-4">
-                  <b><i className="ms-1"> {this.props.currentTitle} </i></b>
+                  <b><i className="ms-1"> 
+                    {this.props.currentTitle} 
+                  </i></b>
                 </h3>
                 <h6 className="shareVideoH col-md-2 pt-2">
 {/*                  <a className="shareVideo" href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} target="_blank">
@@ -72,7 +74,7 @@ class Main extends Component {
                 <button type="submit" className="uploadButton btn-danger btn-sm hover-shadow">Upload Video</button>
               </div>
             </form>
-           
+
             { this.props.videos.map((video, key) => {
               return (
                 <div className="videoCards card mb-3 text-center bg-light mx-auto" key={key} >
@@ -96,6 +98,7 @@ class Main extends Component {
     )
   }
 }
+
 
 
 

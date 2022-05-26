@@ -26,8 +26,8 @@ function NoWeb3NotificationModal (props) {
       <Modal.Footer>
         <Button variant="flat" className="mx-auto modal-button" onClick={props.onHide}>
           <img src={MMLogo} className="me-2 ms-0" width="25" height="25" alt="" />
-          <a href="https://www.metamask.io" rel="noopener noreferrer" target="_blank" className="metamask" >
-          Download MetaMask
+          <a href="https://www.metamask.io" rel="noopener noreferrer" target="_blank" className="metamask">
+            Download MetaMask
           </a>
         </Button>
       </Modal.Footer>

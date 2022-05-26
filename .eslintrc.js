@@ -21,6 +21,8 @@ module.exports = {
   rules: {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-wrap-multilines": "off",
+    "react/prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
     "quotes": [0, "double"],
     "semi": [0, "never"],
     "padded-blocks": ["error", { "classes": "always" }],
@@ -28,9 +30,7 @@ module.exports = {
     "comma-dangle": "off",
     "quote-props": "off",
     "operator-linebreak": "off",
-    "no-multiple-empty-lines": "off",
-    // "vars-on-top": "off",
-    // "no-var": "off"
+    "no-multiple-empty-lines": "off"
 
   },
 };

@@ -46,14 +46,14 @@ function Nav(props) {
       { wallet.status === 'connected' ? (
         <ButtonToolbar className="ms-auto me-3">
           <Button className="wallet btn-sm me-2 pb-0" variant="outline-light">
-          <img
-            className="mb-1 me-1 rounded"
-            width='17'
-            height='15'
-            alt=""
-            src={`data:image/png;base64,${new Identicon(wallet.account, 30).toString()}`}
-          />
-            <a>{wallet.account ? wallet.account.substring(0,6) : '0x0'}...{wallet.account ? wallet.account.substring(38,42) : ''}</a>
+            <img
+              className="mb-1 me-1 rounded"
+              width="17"
+              height="15"
+              alt=""
+              src={`data:image/png;base64,${new Identicon(wallet.account, 30).toString()}`}
+            />
+            <a>{wallet.account ? wallet.account.substring(0, 6) : '0x0'}...{wallet.account ? wallet.account.substring(38, 42) : ''}</a>
             &nbsp;|&nbsp;
             {web3.utils.fromWei(wallet.balance, 'ether')} ETH
           </Button>
@@ -64,7 +64,7 @@ function Nav(props) {
       ) : (
         <Button className="connect btn-sm ms-auto me-3" variant="outline-light" onClick={connectWallet}>
           Connect Wallet
-        </Button> 
+        </Button>
       )}
     </Navbar>
   )
