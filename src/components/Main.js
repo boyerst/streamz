@@ -71,32 +71,28 @@ class Main extends Component {
               </div>
               &nbsp;
               <div className="uploadVideoDiv">
-                <button type="submit" className="uploadButton btn-danger btn-sm hover-shadow">Upload Video</button>
+                <Button type="submit" className="uploadButton btn-danger btn-sm hover-shadow shadow-lg">Upload Video</Button>
               </div>
             </form>
-
-            { this.props.videos.map((video, key) => {
-              return (
-                <div className="videoCards card mb-3 text-center bg-light mx-auto" key={key} >
-                  <div className="card-title">
-                    <small >
-                      <b>{video.title}</b>
-                    </small>
-
-                  </div>
-                  <div className="videoDivs mx-auto" >
-                      <p className="mx-auto" onClick={() => this.props.changeVideo(video.hash, video.title)}>
-                        <video className="videoTag" src={`https://ipfs.infura.io/ipfs/${video.hash}`} />
-                      </p>
-                  </div>
+            { this.props.videos.map((video, key) =>
+              <div className="videoCards card mb-3 text-center bg-light mx-auto" key={key}>
+                <div className="card-title">
+                  <small>
+                    <b>{video.title}</b>
+                  </small>
                 </div>
-              )
-            })}
+                <div className="videoDivs mx-auto">
+                  <p className="mx-auto" onClick={() => this.props.changeVideo(video.hash, video.title)}>
+                    <video className="videoTag" src={`https://ipfs.infura.io/ipfs/${video.hash}`} />
+                  </p>
+                </div>
+              </div>)}
           </div>
         </div>
       </div>
     )
   }
+
 }
 
 

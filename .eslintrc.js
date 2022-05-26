@@ -23,14 +23,14 @@ module.exports = {
     "react/jsx-wrap-multilines": "off",
     "react/prop-types": 0,
     "react/jsx-props-no-spreading": 0,
+    "jsx-a11y/click-events-have-key-events": "off",
     "quotes": [0, "double"],
+    "quote-props": "off",
     "semi": [0, "never"],
     "padded-blocks": ["error", { "classes": "always" }],
     "react/destructuring-assignment": "off",
     "comma-dangle": "off",
-    "quote-props": "off",
     "operator-linebreak": "off",
     "no-multiple-empty-lines": "off"
-
   },
 };
