@@ -70,7 +70,7 @@ class App extends Component {
       this.setState({ streamz })
       const videosCount = await streamz.methods.videoCount().call()
       this.setState({ videosCount })
-      for (var i = 1; i <= videosCount; i++) {
+      for (let i = 1; i <= videosCount; i++) {
         const video = await streamz.methods.videos(i).call()
         this.setState({
           videos: [...this.state.videos, video]
@@ -95,7 +95,7 @@ class App extends Component {
     const reader = new window.FileReader()
     reader.readAsArrayBuffer(file)
     reader.onloadend = () => {
-      this.setState({ buffer: Buffer(reader.result) })
+      this.setState({ buffer: Buffer.from(reader.result) })
       console.log('buffer', this.state.buffer)
     }
   }

@@ -28,7 +28,9 @@ module.exports = {
     "comma-dangle": "off",
     "quote-props": "off",
     "operator-linebreak": "off",
-    "no-multiple-empty-lines": "off"
+    "no-multiple-empty-lines": "off",
+    // "vars-on-top": "off",
+    // "no-var": "off"
 
   },
 };
