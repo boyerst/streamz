@@ -59,9 +59,7 @@ class App extends Component {
 
   loadBlockchainData = async () => {
     const web3 = new Web3(window.ethereum)
-    console.log(window.web3)
     const accounts = await web3.eth.getAccounts()
-    console.log("Account #1:", accounts[0])
     this.setState({ account: accounts[0] })
     const networkId = await web3.eth.net.getId()
     const networkData = Streamz.networks[networkId]
@@ -102,16 +100,13 @@ class App extends Component {
 
   uploadVideo = async (title) => {
     console.log("Uploading Video to IPFS...")
-    // console.log(ipfs)
     this.setState({ loading: true })
     const video = await ipfs.add(this.state.buffer)
-    // console.log(video)
     console.log(video.path)
     this.state.streamz.methods.uploadVideo(video.path, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
       this.loadBlockchainData()
       this.setState({ loading: false })
     })
-    console.log(this.state)
   }
 
 

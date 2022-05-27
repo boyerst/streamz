@@ -5,7 +5,7 @@ import '../App.css'
 import MMLogo from '../../images/Metamask.png'
 
 
-function NoWeb3NotificationModal (props) {
+function NoWeb3NotificationModal(props) {
 
 
   return (

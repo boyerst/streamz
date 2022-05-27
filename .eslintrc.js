@@ -1,3 +1,7 @@
+const a11yOff = Object.keys(require('eslint-plugin-jsx-a11y').rules)
+  .reduce((acc, rule) => { acc[`jsx-a11y/${rule}`] = 'off'; return acc }, {})
+
+
 module.exports = {
   env: {
     browser: true,
@@ -19,13 +23,11 @@ module.exports = {
 
   ],
   rules: {
+    ...a11yOff,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-wrap-multilines": "off",
     "react/prop-types": 0,
     "react/jsx-props-no-spreading": 0,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "jsx-ally/no-noninteractive-element-interactions": "off",
-    "jsx-ally/media-has-caption": "off",
     "quotes": [0, "double"],
     "quote-props": "off",
     "semi": [0, "never"],

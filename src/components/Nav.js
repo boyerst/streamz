@@ -18,12 +18,10 @@ function Nav(props) {
 
   const connectWallet = async (e) => {
     e.preventDefault()
-    console.log("Connect button")
     if (window.ethereum) {
       await wallet.connect()
       await props.loadBlockchainData()
     } else {
-      console.log("Route to modal")
       props.showNoWeb3Modal()
     }
   }
@@ -53,9 +51,14 @@ function Nav(props) {
               alt=""
               src={`data:image/png;base64,${new Identicon(wallet.account, 30).toString()}`}
             />
-            <a>{wallet.account ? wallet.account.substring(0, 6) : '0x0'}...{wallet.account ? wallet.account.substring(38, 42) : ''}</a>
+            <a>
+              {wallet.account ? wallet.account.substring(0, 6) : '0x0'}
+              ...
+              {wallet.account ? wallet.account.substring(38, 42) : ''}
+            </a>
             &nbsp;|&nbsp;
-            {web3.utils.fromWei(wallet.balance, 'ether')} ETH
+            {web3.utils.fromWei(wallet.balance, 'ether')}
+            ETH
           </Button>
           <Button className="disconnect btn-sm pb-.25" variant="outline-light" onClick={disconnectWallet}>
             Disconnect
