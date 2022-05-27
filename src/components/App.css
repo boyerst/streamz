@@ -22,12 +22,12 @@
 
 .shareVideo {
 /*  text-decoration: none;*/
-  color: black;
+  /*color: black;*/
   float: right;
 }
 
 .shareVideo:hover {
-  color: #6E31E0;
+  color: #6E31E0 !important;
 }
 
 .videoIndexDiv {

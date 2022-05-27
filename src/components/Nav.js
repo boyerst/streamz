@@ -57,7 +57,7 @@ function Nav(props) {
             &nbsp;|&nbsp;
             {web3.utils.fromWei(wallet.balance, 'ether')} ETH
           </Button>
-          <Button className="disconnect btn-sm pb-.25" variant="outline-light" onClick={disconnectWallet}> 
+          <Button className="disconnect btn-sm pb-.25" variant="outline-light" onClick={disconnectWallet}>
             Disconnect
           </Button>
         </ButtonToolbar>

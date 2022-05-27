@@ -15,29 +15,18 @@ class Main extends Component {
         <div className="col-12 row">
           <div className="mainVideoDiv1 col-xl-9">
             <div className="mainVideoDiv2 center-text ms-5">
-              <video className="mainVideo container-fluid modal-fullscreen-sm-down ms-1" src={`https://ipfs.infura.io/ipfs/${this.props.currenthash}`} controls></video>
+              <video className="mainVideo container-fluid modal-fullscreen-sm-down ms-1" src={`https://ipfs.infura.io/ipfs/${this.props.currenthash}`} controls />
               <div className="col-12 row">
                 <h3 className="col-md-9 ms-4">
-                  <b><i className="ms-1"> 
-                    {this.props.currentTitle} 
-                  </i></b>
+                  <b><i className="ms-1">{this.props.currentTitle}</i></b>
                 </h3>
                 <h6 className="shareVideoH col-md-2 pt-2">
-{/*                  <a className="shareVideo" href={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`} target="_blank">
-                    <i>
-                      Share Video
-                    </i>
-                    <img className="shareImage ms-3" width="23" height="23" src={share} alt=""></img>
-                  </a>*/}
-
                   <Button className="shareVideo" size="sm" variant="light" onClick={this.props.showShareVideoModal}>
                     <i>
                       Share Video
                     </i>
-                    <img className="shareImage ms-3" width="23" height="23" src={share} alt=""></img>
+                    <img className="shareImage ms-3" width="23" height="23" src={share} alt="" />
                   </Button>
-
-
                 </h6>
               </div>
             </div>

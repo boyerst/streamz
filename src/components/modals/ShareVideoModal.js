@@ -12,7 +12,7 @@ function ShareVideoModal(props) {
 
     <Modal
       {...props}
-      dialogClassName={"shareVideoModal"}
+      dialogClassName="shareVideoModal"
       size="l"
       centered
     >
@@ -23,7 +23,7 @@ function ShareVideoModal(props) {
               <img src={IPFS} className="me-2 ms-0" width="25" height="25" alt="" />
               <input
                 className="shareVideoInput"
-                onFocus={e => e.target.select()}
+                onFocus={(e) => e.target.select()}
                 type="text"
                 defaultValue={`https://ipfs.infura.io/ipfs/${props.currenthash}`}
               />
