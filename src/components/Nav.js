@@ -36,7 +36,7 @@ function Nav(props) {
 
   return (
     <Navbar className="navigation navbar-dark bg-gradient p-1 shadow-lg text-monospace">
-      <Navbar.Brand href="#!" className="title" style={{ fontSize: "40px" }}>
+      <Navbar.Brand className="title" href="#!" style={{ fontSize: "40px" }}>
         <img src={IPFS} className="me-2 mb-1" width="40" height="40" alt="" />
         StreamZ
       </Navbar.Brand>

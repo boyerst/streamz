@@ -20,7 +20,6 @@ module.exports = {
   },
   plugins: [
     'react',
-
   ],
   rules: {
     ...a11yOff,

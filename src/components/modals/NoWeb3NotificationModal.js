@@ -24,9 +24,9 @@ function NoWeb3NotificationModal(props) {
         <h6>Click below to initialize blockchain connection...</h6>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="flat" className="mx-auto modal-button" onClick={props.onHide}>
-          <img src={MMLogo} className="me-2 ms-0" width="25" height="25" alt="" />
-          <a href="https://www.metamask.io" rel="noopener noreferrer" target="_blank" className="metamask">
+        <Button className="mx-auto modal-button" variant="flat" onClick={props.onHide}>
+          <img className="me-2 ms-0" src={MMLogo} width="25" height="25" alt="" />
+          <a className="metamask" href="https://www.metamask.io" rel="noopener noreferrer" target="_blank">
             Download MetaMask
           </a>
         </Button>

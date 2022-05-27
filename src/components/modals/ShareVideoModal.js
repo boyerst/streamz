@@ -20,7 +20,7 @@ function ShareVideoModal(props) {
         <Modal.Title id="contained-modal-title-vcenter">
           <div className="form-control">
             <small>
-              <img src={IPFS} className="me-2 ms-0" width="25" height="25" alt="" />
+              <img className="me-2 ms-0" src={IPFS} width="25" height="25" alt="" />
               <input
                 className="shareVideoInput"
                 onFocus={(e) => e.target.select()}

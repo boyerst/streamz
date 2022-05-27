@@ -21,7 +21,7 @@ function WrongNetworkModal(props) {
       </Modal.Header>
       <Modal.Body className="mx-auto">
         <h6>
-          <img src={logo} className="me-2 ms-0" width="25" height="25" alt="" />
+          <img className="me-2 ms-0" src={logo} width="25" height="25" alt="" />
           Please Change to the Ethereum Network
         </h6>
       </Modal.Body>
