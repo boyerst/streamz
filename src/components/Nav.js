@@ -16,8 +16,41 @@ function Nav(props) {
   const web3 = new Web3(Web3.currentProvider)
 
 
+  // const connectWallet = async (e) => {
+  //   e.preventDefault()
+  //   if (window.ethereum) {
+  //     await wallet.connect()
+  //     await props.loadBlockchainData()
+  //   } else {
+  //     props.showNoWeb3Modal()
+  //   }
+  // }
+
   const connectWallet = async (e) => {
     e.preventDefault()
+    const chainId = 1337
+    if (window.ethereum.networkVersion !== chainId) {
+      try {
+        await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: web3.utils.toHex(chainId) }]
+        });
+      } catch (err) {
+        if (err.code === 4902) {
+          await window.ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [
+              {
+                chainName: 'Ganache (Localhost 7545)',
+                chainId: web3.utils.toHex(chainId),
+                nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
+                rpcUrls: ['http://127.0.0.1:7545']
+              }
+            ]
+          });
+        }
+      }
+    }
     if (window.ethereum) {
       await wallet.connect()
       await props.loadBlockchainData()
@@ -25,6 +58,8 @@ function Nav(props) {
       props.showNoWeb3Modal()
     }
   }
+
+
 
 
   const disconnectWallet = async (e) => {

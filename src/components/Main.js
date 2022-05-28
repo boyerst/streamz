@@ -44,7 +44,6 @@ class Main extends Component {
                 className="videoUploadInputs"
                 type="file"
                 accept=".mp4, .mkv, .ogg, .wmv"
-                // style={{ width: '250px' }}
                 onChange={this.props.captureFile}
               />
               <div className="form-group">
