@@ -29,35 +29,54 @@ function Nav(props) {
   const connectWallet = async (e) => {
     e.preventDefault()
     const chainId = 1337
+    console.log("networkId:", window.ethereum.networkVersion)  
+    console.log("chainId:", chainId)
+    console.log("chainIdtoHex:", web3.utils.toHex(chainId))
     if (window.ethereum.networkVersion !== chainId) {
       try {
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
           params: [{ chainId: web3.utils.toHex(chainId) }]
         });
-      } catch (err) {
-        if (err.code === 4902) {
+          await wallet.connect()
+          console.log("loadBlockchainData executed next...")
+          await props.loadBlockchainData(web3.utils.toHex(chainId))
+      } catch (switchError) {
+        if (switchError.code === 4902) {
+          console.log("switchError")
           await window.ethereum.request({
             method: 'wallet_addEthereumChain',
             params: [
               {
-                chainName: 'Ganache (Localhost 7545)',
                 chainId: web3.utils.toHex(chainId),
-                nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
-                rpcUrls: ['http://127.0.0.1:7545']
-              }
-            ]
+                chainName: 'Localhost 7545',
+                rpcUrls: ['http://127.0.0.1:7545'],
+                nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' }
+              },
+            ],
           });
-        }
+        } 
       }
-    }
-    if (window.ethereum) {
-      await wallet.connect()
-      await props.loadBlockchainData()
     } else {
       props.showNoWeb3Modal()
+
     }
   }
+  //     if (window.ethereum) {
+  //       await wallet.connect()
+  //       await props.loadBlockchainData()
+  //       // console.log("hello2")
+  //     } else {
+  //       props.showNoWeb3Modal()
+  //     }
+  //   }
+  //   // if (window.ethereum) {
+  //   //   await wallet.connect()
+  //   //   await props.loadBlockchainData()
+  //   // } else {
+  //   //   props.showNoWeb3Modal()
+  //   // }
+  // }
 
 
 
