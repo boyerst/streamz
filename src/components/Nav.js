@@ -16,18 +16,33 @@ function Nav(props) {
   const web3 = new Web3(Web3.currentProvider)
 
 
+  // const connectWallet = async (e) => {
+  //   e.preventDefault()
+  //   if (window.ethereum) {
+  //     await wallet.connect()
+  //     await props.loadBlockchainData()
+  //   } else {
+  //     props.showNoWeb3Modal()
+  //   }
+  // }
+
   const connectWallet = async (e) => {
     e.preventDefault()
-    const chainId = 1
+    const chainId = 1337
     console.log("Nav.js networkId:", window.ethereum.networkVersion)  
     console.log("Nav.js chainId:", chainId)
     console.log("Nav.js chainIdtoHex:", web3.utils.toHex(chainId))
     if (window.ethereum.networkVersion !== chainId) {
+    // if (window.ethereum) {
       try {
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
           params: [{ chainId: web3.utils.toHex(chainId) }]
         });
+        await wallet.connect()
+        console.log("wallet.connect() connected")
+        await props.loadBlockchainData()
+        console.log("loadBlockchainData executed")
       } catch (switchError) {
         if (switchError.code === 4902) {
           console.log("switchError")
@@ -36,8 +51,8 @@ function Nav(props) {
             params: [
               {
                 chainId: web3.utils.toHex(chainId),
-                chainName: 'Localhost 7545',
-                rpcUrls: ['http://127.0.0.1:7545'],
+                chainName: 'Localhost 8545',
+                rpcUrls: ['http://127.0.0.1:8545'],
                 nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' }
               },
             ],

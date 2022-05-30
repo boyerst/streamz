@@ -62,10 +62,9 @@ class App extends Component {
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
     const networkId = await web3.eth.net.getId()
-    console.log(networkId)
-    console.log("networkId:", networkId)
+    console.log("App.js networkId:", networkId)
     const networkData = Streamz.networks[networkId]
-    console.log("networkData:", networkData)
+    console.log("App.js networkData:", networkData)
     if (networkData) {
       const streamz = new web3.eth.Contract(Streamz.abi, networkData.address)
       this.setState({ streamz })
