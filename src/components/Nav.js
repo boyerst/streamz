@@ -16,31 +16,18 @@ function Nav(props) {
   const web3 = new Web3(Web3.currentProvider)
 
 
-  // const connectWallet = async (e) => {
-  //   e.preventDefault()
-  //   if (window.ethereum) {
-  //     await wallet.connect()
-  //     await props.loadBlockchainData()
-  //   } else {
-  //     props.showNoWeb3Modal()
-  //   }
-  // }
-
   const connectWallet = async (e) => {
     e.preventDefault()
-    const chainId = 1337
-    console.log("networkId:", window.ethereum.networkVersion)  
-    console.log("chainId:", chainId)
-    console.log("chainIdtoHex:", web3.utils.toHex(chainId))
+    const chainId = 1
+    console.log("Nav.js networkId:", window.ethereum.networkVersion)  
+    console.log("Nav.js chainId:", chainId)
+    console.log("Nav.js chainIdtoHex:", web3.utils.toHex(chainId))
     if (window.ethereum.networkVersion !== chainId) {
       try {
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
           params: [{ chainId: web3.utils.toHex(chainId) }]
         });
-          await wallet.connect()
-          console.log("loadBlockchainData executed next...")
-          await props.loadBlockchainData(web3.utils.toHex(chainId))
       } catch (switchError) {
         if (switchError.code === 4902) {
           console.log("switchError")
@@ -62,22 +49,6 @@ function Nav(props) {
 
     }
   }
-  //     if (window.ethereum) {
-  //       await wallet.connect()
-  //       await props.loadBlockchainData()
-  //       // console.log("hello2")
-  //     } else {
-  //       props.showNoWeb3Modal()
-  //     }
-  //   }
-  //   // if (window.ethereum) {
-  //   //   await wallet.connect()
-  //   //   await props.loadBlockchainData()
-  //   // } else {
-  //   //   props.showNoWeb3Modal()
-  //   // }
-  // }
-
 
 
 
