@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
 import '../App.css'
-import logo from '../../images/Metamask.png'
+import logo from '../../images/metamask.png'
 
 
 

@@ -51,6 +51,7 @@ function Nav(props) {
             params: [
               {
                 chainId: web3.utils.toHex(chainId),
+                
                 chainName: 'Localhost 8545',
                 rpcUrls: ['http://127.0.0.1:8545'],
                 nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' }

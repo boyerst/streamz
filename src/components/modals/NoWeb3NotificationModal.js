@@ -2,7 +2,8 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal'
 import '../App.css'
-import MMLogo from '../../images/Metamask.png'
+import MMLogo from '../../images/metamask.png'
+import Exclaim from '../../images/exclaim.png'
 
 
 function NoWeb3NotificationModal(props) {
@@ -17,11 +18,13 @@ function NoWeb3NotificationModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          <small>Oh no! You are not using an web3 capable browser</small>
+          <small>
+          <img className="me-2 mb-1" src={Exclaim} width="38" height="38" alt=""/>
+          Provider Error</small>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="mx-auto">
-        <h6>Click below to initialize blockchain connection...</h6>
+        <h6 className="text-muted">No web3 provider was found</h6>
       </Modal.Body>
       <Modal.Footer>
         <Button className="mx-auto modal-button" variant="flat" onClick={props.onHide}>

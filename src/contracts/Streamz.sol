@@ -1,10 +1,5 @@
 pragma solidity ^0.5.16;
 
-// [X] 1. Model the video
-// [X] 2. Store the video
-// [X] 3. Upload video
-// [ ] 4. List videos
-
 
 contract Streamz {
 
