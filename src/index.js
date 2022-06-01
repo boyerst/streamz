@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <UseWalletProvider
+    autoConnect={true}
     connectors={{
       provided: { provider: window.cleanEthereum },
       injected: {
