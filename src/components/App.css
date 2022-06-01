@@ -92,8 +92,12 @@ scrollbar-width: none; /* Firefox */
 
 .wallet.btn-sm.me-2.pb-0 {
   font-size: 12px;
+  text-decoration: none;
 }
 
+Button a .p-1 {
+  text-decoration: none;
+}
 .disconnect.btn-sm {
   font-size: 12px;
 }

@@ -90,13 +90,15 @@ function Nav(props) {
               alt=""
               src={`data:image/png;base64,${new Identicon(wallet.account, 30).toString()}`}
             />
-            <a>
+            <a className="p-1 text-decoration-none text-white">
               {wallet.account ? wallet.account.substring(0, 6) : '0x0'}
               ...
               {wallet.account ? wallet.account.substring(38, 42) : ''}
             </a>
-            &nbsp;|&nbsp;
-            {web3.utils.fromWei(wallet.balance, 'ether')}
+            |
+            <a className="p-1 text-decoration-none text-white">
+              <i>{web3.utils.fromWei(wallet.balance, 'ether')}</i>
+            </a>
             ETH
           </Button>
           <Button className="disconnect btn-sm pb-.25" variant="outline-light" onClick={disconnectWallet}>
