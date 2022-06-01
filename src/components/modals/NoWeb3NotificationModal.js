@@ -2,8 +2,8 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal'
 import '../App.css'
-import MMLogo from '../../images/metamask.png'
 import Exclaim from '../../images/exclaim.png'
+import MMLogo from '../../images/Metamask.png'
 
 
 function NoWeb3NotificationModal(props) {
@@ -28,8 +28,8 @@ function NoWeb3NotificationModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button className="mx-auto modal-button" variant="flat" onClick={props.onHide}>
-          <img className="me-2 ms-0" src={MMLogo} width="25" height="25" alt="" />
           <a className="metamask" href="https://www.metamask.io" rel="noopener noreferrer" target="_blank">
+          <img className="me-2 ms-0" src={MMLogo} width="25" height="25" alt="" />
             Download MetaMask
           </a>
         </Button>
