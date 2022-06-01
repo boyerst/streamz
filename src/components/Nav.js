@@ -81,8 +81,8 @@ function Nav(props) {
       </Navbar.Brand>
 
       { wallet.status === 'connected' ? (
-        <ButtonToolbar className="ms-auto me-3">
-          <Button className="wallet btn-sm me-2 pb-0" variant="outline-light">
+        <ButtonToolbar className="buttonToolbar ms-auto me-3">
+          <Button className="wallet btn-sm pb-0" variant="outline-light">
             <img
               className="mb-1 me-1 rounded"
               width="17"

@@ -90,14 +90,12 @@ scrollbar-width: none; /* Firefox */
   margin-top: -14px;
 } 
 
-.wallet.btn-sm.me-2.pb-0 {
+.wallet.btn-sm.pb-0 {
   font-size: 12px;
-  text-decoration: none;
+  /*text-decoration: none;*/
+  margin-right: 9px;
 }
 
-Button a .p-1 {
-  text-decoration: none;
-}
 .disconnect.btn-sm {
   font-size: 12px;
 }
@@ -216,6 +214,20 @@ div .form-control {
 
 
 
+/*Nav (Responsive)*/
+@media only screen and (max-width: 630px) {
+
+  .wallet.btn-sm.pb-0 {
+    margin-left: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 0;
+  }
+  .disconnect.btn-sm {
+    margin-left: auto;
+    margin-bottom: 5px;
+  }
+}
 
 
 
