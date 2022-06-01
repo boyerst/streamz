@@ -30,33 +30,37 @@ function Nav(props) {
   const connectWallet = async (e) => {
     e.preventDefault()
     const chainId = 1337
-    console.log("Nav.js networkId:", window.ethereum.networkVersion)
-    console.log("Nav.js chainId:", chainId)
-    console.log("Nav.js chainIdtoHex:", web3.utils.toHex(chainId))
-    try {
-      await window.ethereum.request({
-        method: 'wallet_switchEthereumChain',
-        params: [{ chainId: web3.utils.toHex(chainId) }]
-      });
-      await wallet.connect()
-      console.log("wallet.connect() connected")
-      await props.loadBlockchainData()
-      console.log("loadBlockchainData executed")
-    } catch (switchError) {
-      if (switchError.code === 4902) {
-        console.log("switchError")
+    // console.log("Nav.js networkId:", window.ethereum.networkVersion)
+    // console.log("Nav.js chainId:", chainId)
+    // console.log("Nav.js chainIdtoHex:", web3.utils.toHex(chainId))
+    if (window.ethereum) {
+      try {
         await window.ethereum.request({
-          method: 'wallet_addEthereumChain',
-          params: [
-            {
-              chainId: web3.utils.toHex(chainId),
-              chainName: 'Localhost 8545',
-              rpcUrls: ['http://127.0.0.1:8545'],
-              nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' }
-            },
-          ],
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: web3.utils.toHex(chainId) }]
         });
+        await wallet.connect()
+        console.log("wallet.connect() connected")
+        await props.loadBlockchainData()
+        console.log("loadBlockchainData executed")
+      } catch (switchError) {
+        if (switchError.code === 4902) {
+          console.log("switchError")
+          await window.ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [
+              {
+                chainId: web3.utils.toHex(chainId),
+                chainName: 'Localhost 8545',
+                rpcUrls: ['http://127.0.0.1:8545'],
+                nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' }
+              },
+            ],
+          });
+        }
       }
+    } else {
+      props.showNoWeb3Modal()
     }
   }
 
