@@ -11,10 +11,6 @@
 
 /*Main*/
 
-.mainVideo {
-/*  max-width: 1200px;*/
-}
-
 .shareVideoH {
   margin-left: auto; 
   margin-right: 0;
@@ -43,7 +39,7 @@ div .videoCardsDiv {
 }
 
 div .card-title {
-  background-color: #00b386;
+  background-color: #27EAA3;
 }
 
 .videoTag {
