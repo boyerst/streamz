@@ -93,11 +93,13 @@ You will also need a web3 provider installed on your browser:
 
 ## Built With
 
-* [IPFS](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) - Client library implementing IPFS Core API
 * [Solidity](https://docs.soliditylang.org/en/v0.8.14/) - Ethereum smart contract language
 * [ReactJS](https://reactjs.org/docs/getting-started.html) - Application framework
 * [Truffle Suite](https://trufflesuite.com/docs/) - Development environment
+* [React Bootstrap](https://react-bootstrap.netlify.app/getting-started/introduction/) - Front-end stylesheet library
+* [IPFS](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) - Client library implementing IPFS Core API
 * [useWallet()](https://github.com/aragon/use-wallet) - Dapp to Ethereum provider connector
+* [identicon.js](https://www.npmjs.com/package/identicon.js) - Identicon generator library
 
 
 
