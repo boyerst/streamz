@@ -29,7 +29,7 @@ function Nav(props) {
 
   const connectWallet = async (e) => {
     e.preventDefault()
-    const chainId = 1337
+    const chainId = 3
     // console.log("Nav.js networkId:", window.ethereum.networkVersion)
     // console.log("Nav.js chainId:", chainId)
     // console.log("Nav.js chainIdtoHex:", web3.utils.toHex(chainId))
@@ -51,10 +51,16 @@ function Nav(props) {
             params: [
               {
                 chainId: web3.utils.toHex(chainId),
-                chainName: 'Localhost 8545',
-                rpcUrls: ['http://127.0.0.1:8545'],
+                chainName: 'Ropsten Test Network',
+                rpcUrls: ['https://ropsten.infura.io/v3/'],
                 nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' }
               },
+              // {
+              //   chainId: web3.utils.toHex(chainId),
+              //   chainName: 'Localhost 8545',
+              //   rpcUrls: ['http://127.0.0.1:8545'],
+              //   nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' }
+              // },
             ],
           });
         }
