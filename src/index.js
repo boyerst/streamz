@@ -13,7 +13,7 @@ ReactDOM.render(
     connectors={{
       provided: { provider: window.cleanEthereum },
       injected: {
-        chainId: [1337, 1]
+        chainId: [1337, 3, 1]
       }
     }}
   >
