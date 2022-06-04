@@ -3,7 +3,7 @@ require('babel-register');
 require('babel-polyfill');
 
 const HDWalletProvider = require("truffle-hdwallet-provider");
-const privateKeys = process.env.PRIVATE_KEYS || ""
+const privateKeys = process.env.PRIVATE_KEYS
 
 
 module.exports = {
