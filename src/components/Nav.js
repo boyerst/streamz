@@ -15,24 +15,9 @@ function Nav(props) {
   const wallet = useWallet()
   const web3 = new Web3(Web3.currentProvider)
 
-
-  // const connectWallet = async (e) => {
-  //   e.preventDefault()
-  //   if (window.ethereum) {
-  //     await wallet.connect()
-  //     await props.loadBlockchainData()
-  //   } else {
-  //     props.showNoWeb3Modal()
-  //   }
-  // }
-
-
   const connectWallet = async (e) => {
     e.preventDefault()
     const chainId = 3
-    // console.log("Nav.js networkId:", window.ethereum.networkVersion)
-    // console.log("Nav.js chainId:", chainId)
-    // console.log("Nav.js chainIdtoHex:", web3.utils.toHex(chainId))
     if (window.ethereum) {
       try {
         await window.ethereum.request({
@@ -40,12 +25,9 @@ function Nav(props) {
           params: [{ chainId: web3.utils.toHex(chainId) }]
         });
         await wallet.connect()
-        console.log("wallet.connect() connected")
         await props.loadBlockchainData()
-        console.log("loadBlockchainData executed")
       } catch (switchError) {
         if (switchError.code === 4902) {
-          console.log("switchError")
           await window.ethereum.request({
             method: 'wallet_addEthereumChain',
             params: [

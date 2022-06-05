@@ -62,9 +62,7 @@ class App extends Component {
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
     const networkId = await web3.eth.net.getId()
-    console.log("App.js networkId:", networkId)
     const networkData = Streamz.networks[networkId]
-    console.log("App.js networkData:", networkData)
     if (networkData) {
       const streamz = new web3.eth.Contract(Streamz.abi, networkData.address)
       this.setState({ streamz })
@@ -96,15 +94,12 @@ class App extends Component {
     reader.readAsArrayBuffer(file)
     reader.onloadend = () => {
       this.setState({ buffer: Buffer.from(reader.result) })
-      console.log('buffer', this.state.buffer)
     }
   }
 
   uploadVideo = async (title) => {
-    console.log("Uploading Video to IPFS...")
     this.setState({ loading: true })
     const video = await ipfs.add(this.state.buffer)
-    console.log(video.path)
     this.state.streamz.methods.uploadVideo(video.path, title).send({ from: this.state.account }).on('transactionHash', (hash) => {
       this.loadBlockchainData()
       this.setState({ loading: false })
